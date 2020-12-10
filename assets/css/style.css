@@ -11,7 +11,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   background-color: #040404;
-  color: #000000;
+  color: #fff;
   position: relative;
   background: transparent;
 }
@@ -184,7 +184,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
-  color: #fff;
+  color: #000000;
   text-decoration: none;
 }
 
