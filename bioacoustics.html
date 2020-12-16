@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Blog - Powering the Raspberry Pi</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Personal - v2.4.0
+  * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <main id="main">
+
+    <!-- ======= Powering the Raspberry Pi ======= -->
+    <div id="blogs" class="blogs">
+      <div class="container">
+
+        <div class="row">
+            <div class="col-lg-2"> 
+            </div>
+
+
+          <div class="col-lg-8">
+            <h2 class="blog-title">Deploying 'Ears' in Ecosystems: Using Bioacoustics to Monitor Bird Species</h2>
+            <h3>Introduction</h3>
+
+            <p class="text-justify">
+             Climate change and human encroachment are a major threat to ecosystems around the world especially in the tropics. The tropics are characterized with one of the richest biodiversity on the planet. This means that the effects of climate change will be felt most in ecosystems found within the tropics. Urgent conservation efforts need to be increased in order to preserve these ecosystems. 
+            </p>
+              
+            <p class="text-justify">
+              Increase in temperatures due to global warming and habitat loss due to human encroachment is greatly affecting bird populations. It is estimated that over the next 100 years, 20 percent to 30 percent of bird species will be extinct. Majority of these are birds found in the tropics. As temperatures rise and habitats are lost, animals tend to migrate in search of new and cool habitats. By studying these trends, we can learn about the changes taking place in the ecosystems.  
+            </p>
+              
+            <p class="text-justify">
+              Birds respond quickly to changes taking place in their ecosystems. This makes them to be one of the most suitable species to use as an indicator of the changes taking place in ecosystems. We can infer about other species within a given ecosystem by studying the trends of bird species. A decline or absence of a bird species that used to be found in a given ecosystem would indicate a change in that ecosystem hence calling for its conservation.    
+            </p>
+              
+            <h3>Monitoring ecosystems</h3>
+              
+            <p class="text-justify">
+              Current trends in ecosystems call for them to be closely monitored in order to preserve them. Traditional methods of monitoring the ecosystems that involve carrying out surveys are time consuming, expensive and are sometimes affected by other factors like inaccessibility of some parts and weather. Therefore, alternative and better methods of monitoring the ecosystems need to be devised. 
+            </p>
+              
+            <p class="text-justify">
+              Bioacoustic monitoring of ecosystems provides a potential remedy to the hurdles faced when using surveys to monitor ecosystems. Most animals, like human beings, use sound as one of their means of communication. It is possible to identify different bird species by the sound they produce. This means that we can monitor birds by listening to the sound they make. 
+            </p>
+              
+            <p class="text-justify">
+              Advancement in technology has seen development of handheld devices that can be used to record good quality sound. Using these devices, we can collect acoustic data in ecosystems of interest and use it in studying the species found in them. The AudioMoth and the Raspberry Pi are examples of devices that can be used in collecting acoustic data for ecosystems monitoring. Figure 1 below shows the AudioMoth and the Raspberry Pi. 
+            </p>
+              <div class="row">
+                  <div class="col-lg-6">
+                      <img src="/assets/img/audiomoth.jpeg" class="img-fluid" alt="Responsive image">
+                  </div>
+                  <div class="col-lg-6">
+                      <img src="/assets/img/raspberrypi.PNG" class="img-fluid" alt="Responsive image">
+                  </div>
+              </div>
+              <br></br>
+            <center>
+            <p class="font-italic"> Figure 1: An AudioMoth placed next to a 1 KSh coin for size comparison (left)  and a Raspberry Pi placed next to a ruler to show its size (right).</p>
+            <br></br>
+            </center>
+            <h3>Automatic acoustic classification of bird species.</h3>
+              
+            <p class="text-justify">
+              Acoustic monitoring of ecosystems provides a means to study ecosystems with minimal disturbance and over wide areas. Decrease in cost of recording instruments has made it easier to expand acoustic monitoring of ecosystems from just proof of concept studies to actual study of biodiversity. Acoustic sensors can be deployed in most parts of the ecosystems to record sound that is then used to study the ecosystems.
+            </p>
+              
+              
+            <p class="text-justify">
+              Ecosystems have a vast amount of acoustic data that can be used to study trends in them. Manual analysis of this data may prove to be cumbersome and time consuming. Sampling of the data may introduce bias and incompleteness in the analysis. However, use of acoustic sensors with the ability to classify species automatically from their vocalization can help solve this problem. Automatic acoustic classification of birds leverages digital signal processing and machine learning techniques to classify different species based on their vocalizations.  
+            </p>
+              
+            <p class="text-justify">
+              Birds are one of the most vocal species in the ecosystems. The sound produced by a bird contains features that are unique to its species. Using digital signal processing, we can extract these features and identify different species from the sound they produce. The feature of interest in acoustic classification is the frequency component of the sound.  
+            </p>
+              
+            <p class="text-justify">
+              Python programming language makes it possible to carry out digital signal processing in software. The frequency components of a sound recording can be extracted and plotted against time using Python. This plot is called a spectrogram. Figure 2 below shows spectrograms of the Hartlaub’s Turacos and Grey-backed Camaroptera’s recording obtained from <a href="https://www.dkut.ac.ke/">Dedan Kimathi University of Technology Conservancy</a>.
+            </p>
+             <div class="row">
+                  <div class="col-lg-6">
+                      <img src="/assets/img/hartlaub's-turacos.png" class="img-fluid" alt="Responsive image">
+                  </div>
+                  <div class="col-lg-6">
+                      <img src="/assets/img/grey-backed-camaroptera.png" class="img-fluid" alt="Responsive image">
+                  </div>
+              </div>
+              <br></br>
+            <center>
+            <p class="font-italic"> Figure 2: Spectrograms of three seconds long recordings from Dedan Kimathi University of Technology Conservancy  of the Hartlaub’s Turacos (left)  and the Grey-backed Camaroptera (right).</p>
+            <br></br>
+            </center>
+
+              
+            <p class="text-justify">
+              From figure 2, we can see the plots are different from each other. Therefore, we can classify birds by extracting the frequency component of their sound and plotting a spectrogram. The spectrogram can then be treated as an image and fed to a machine learning model as an input for classification.  
+            </p>
+              
+            <p class="text-justify">
+              A system that records sound, processes it and identifies the species in the recordings would be an ideal system to carry out acoustic monitoring of birds for the purpose of ecosystems conservation. At <a href="https://dekut-dsail.github.io/">Centre for Data Science and Artificial Intelligence (DSAIL)</a> , we have designed the DSAIL Bioacoustics System that is based on the Raspberry Pi single computer. The system is designed to record and save time stamped audio data of birds. The data will be used to develop machine learning models to classify birds automatically based on their vocalizations. With enough and labeled acoustic data, we can leverage machine learning to automatically classify birds in ecosystems of interest.  
+            </p>
+
+             <div class="row">
+                  <div class="col-lg-6">
+                      <img src="/assets/img/resource-centre-deployment.jpg" class="img-fluid" alt="Responsive image">
+                  </div>
+                  <div class="col-lg-6">
+                      <img src="/assets/img/conservancy-deployment.jpg" class="img-fluid" alt="Responsive image">
+                  </div>
+              </div>
+              <br></br>
+            <center>
+            <p class="font-italic"> Figure 3: DSAIL Bioacoustics System deployments  outside the  university Resource Centre for power analysis of the system (left) and at the university conservancy to collect acoustic data of birds (right).</p>
+            <br></br>
+            </center>
+              
+            <h3>Conclusion</h3>
+              
+            <p class="text-justify">
+              Severe degradation of ecosystems has affected different species negatively around the world. Conservation efforts need to be increased to preserve these ecosystems. Birds are one of the best species to use when studying the ecosystems since they respond quickly to changes taking place in the ecosystems. Automatic acoustic classification of birds provides a tool to continuously monitor ecosystems. Using the data obtained from the acoustic systems, we can study the trends of bird species in ecosystems of interest and infer about the states of these ecosystems.   
+            </p> 
+              
+          </div>
+
+            <div class="col-lg-2"> 
+            </div>
+  
+
+
+        </div>
+
+      </div>
+    </div><!-- End Powering the Raspberry Pi -->
+
+  </main><!-- End #main -->
+
+  <div class="credits">
+    <!-- All the links in the footer should remain intact. -->
+    <!-- You can delete the links only if you purchased the pro version. -->
+    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/personal-free-resume-bootstrap-template/ -->
+    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
