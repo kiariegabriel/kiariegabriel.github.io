@@ -167,6 +167,20 @@ footer .svg-inline--fa:hover {
 }
 
 
+/*============= Fun Fact Navbar =============*/
+.funfact {
+  background-image: linear-gradient(to right, #4981b3, #ac2615);
+  min-height: 0!important;
+  padding: 0.6rem 0!important;
+}
+.funfact .svg-inline--fa{
+  margin: 0 auto;
+  color: white;
+  font-size: 2rem;
+}
+
+
+
 /*============= MEDIA QUERIES =============*/
 
 /* Devices under 1199px (xl) */
