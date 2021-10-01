@@ -18,6 +18,9 @@ body {
   font-size: 1.1rem;
 }
 
+
+#more {display: none;}
+
 /*============= NAVIGATION =============*/
 .navbar-brand img {
   height: 3rem;
