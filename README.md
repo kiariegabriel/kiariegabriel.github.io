@@ -1,3 +1,2 @@
-# Blog-Website
-
-## for index.html , style.css and main.js follow up with the video
+# Blooger_Website
+This is the complete blooger website create using html and css
