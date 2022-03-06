@@ -1,223 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabriel Kiarie</title>
-    <link rel="shortcut icon" href="img/favicon.png">
-    <!-- Bootstrap 4.5 CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Style CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="assets/img/favicon.png">
 </head>
-
 <body>
+    <header>
+        <a href="index.html" class="logo">
+            <img src="assets/img/favicon.png" alt="logo" width="25" height="25">
+        </a>
+        <div class="menuToggle"></div>
+    </header>
+    <ul class="navigation">
+        <li><a href="index.html" onclick="toggleMenu();">Home</a></li>
+        <li><a href="#blogs" onclick="toggleMenu();">Blogs</a></li>
+        <li><a href="#contact" onclick="toggleMenu();">Contact</a></li>
+    </ul>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="col-12 text-right">
-                <p><a href="email:gabriel.kiarie@dkut.ac.ke">Email at: gabriel.kiarie@dkut.ac.ke</a></p>
-            </div>
+    <!--Banner-->
+    <section class="banner" id="home">
+        <img src="assets/img/mount.jpg" alt="Cover" class="cover">
+        <div class="contentBx">
+            <h2>Blogs</h2>
+            <h4>Let's Read & Write</h4>
         </div>
+    </section>
+
+<!-- Latest Blog Post-->
+<section class="post" id="blogs">
+    <div class="title">
+        <h2>Blogs</h2>
     </div>
-    <!-- End Top Bar -->
-
-
-    <!-- Navigation -->
-    <nav class="navbar bg-light navbar-light navbar-expand-lg">
-        <div class="container">
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="resume.html" class="nav-link">Resume</a></li>
-                    <li class="nav-item"><a href="blogs.html" class="nav-link">Blogs</a></li>
-                    <li class="nav-item"><a href="publications.html" class="nav-link">Publications</a></li>
-                    <li class="nav-item"><a href="funfact.html" target="" class="nav-link">FunFacts</a></li>
-                </ul>
-
-            </div>
-
-        </div>
-    </nav>
-
-    <!-- End Navigation -->
-
-    <!-- Start Blogs -->
-    <div class="col-12 text-center mt-2">
-        <h1 class="text-dark pt-4">Technical Blogs</h1>
-        <div class="border-top border-primary w-25 mx-auto my-3"></div>
-        <p class="lead"></p>
-    </div>
-
-
-    <!-- End Blogs -->
-
-
-    <!-- Three Column Section -->
-    <div class="container">
-        <div class="row my-3">
-
-            <div class="col-md-4 my-4">
-                <h4 class="my-4">"Bioacoustics"</h4>
-                <p>
-                    Bioacoustics offers a tool to closely monitor ecosystems. Acoustic
-                    monitoring of birds species helps us to study the ...
-                </p>
-                <a href="bioacoustics.html" target="_blank" class="btn btn-outline-dark btn-md">Read More</a>
-            </div>
-
-            <div class="col-md-4 my-4">
-                <h4 class="my-4">"Powering the Raspberry"</h4>
-                <p>
-                    The DSAIL Power Management board is a circuit
-                    design that is used to power the Raspberry Pi
-                    intelligently in the field ...
-                </p>
-                <a href="powering-the-raspberrypi.html" target="_blank" class="btn btn-outline-dark btn-md">Read
-                    More</a>
-            </div>
-
-            <div class="col-md-4 my-4">
-				<h4 class="my-4">"DSAIL Bioacoustics System"</h4>
-				<p>
-					The DSAIL Bioacoustics system is a Raspberry Pi based system
-					designed for ...
-				</p>
-				<a href="dsail-bioacoustics-system.html" class="btn btn-outline-dark btn-md">Read
-					More</a>
-			</div>
-
-        </div>
-    </div>
-
-    <!-- End Three Column Section -->
-
-
-    <!-- Start Jumbotron -->
-    <div class="jumbotron py-1 mb-0 mt-2 ">
-
-    </div>
-    <!-- End Jumbotron -->
-
-
-
-
-
-    <div class="col-12 text-center mt-2">
-        <h1 class="text-dark pt-4">General Blogs</h1>
-        <div class="border-top border-primary w-25 mx-auto my-3"></div>
-        <p class="lead"></p>
-    </div>
-
-    <!-- Main Page Heading -->
-
-
-    <!--  Start Three Column Section -->
-    <div class="container">
-        <div class="row my-3">
-
-            <div class="col-md-4 my-4">
-                <h4 class="my-4">"The Indian Ocean Dipole"</h4>
-                <p>
-                    The Indian Ocean Dipole is an important phenomenon that plays a major
-                    role in determining the rain patterns of Eastern Africa and ...
-                </p>
-                <a href="indian-ocean-dipole.html" class="btn btn-outline-dark btn-md">Read More</a>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- End Three Column Section -->
-
-
-
-
-
-    <!-- Start Jumbotron -->
-    <div class="jumbotron py-4 mb-0 mt-2 ">
-
-    </div>
-    <!-- End Jumbotron -->
-
-
-    <!-- Start Footer -->
-    <footer>
-        <div class="container">
-            <div class="row text-light text-center py-2 justify-content-center">
-                <div class="col-sn-10 col-md-8 col-lg-6">
-                    <h4>
-                        Quick Links
-                    </h4>
-                    <div class="border-top border-white w-25 mx-auto my-3"></div>
-
+    <div class="contentBx">
+        <div class="postColumn">
+            <div class="postBox">
+                <div class="imgBx">
+                    <img src="assets/img/cloudy-sky.jpg" alt="cover" class="cover">
+                </div>
+                <div class="textBx">
+                    <h3>
+                        The Indian Ocean Dipole.
+                    </h3>
                     <p>
-                        <a href="https://kiariegabriel.github.io/index.html">Home</a>
+                        The Indian Ocean dipole plays a significant role in the 
+                        rainfall patterns of Eastern Africa and Australia. This article
+                        describes how the Indian Ocean affect the weather of Eastern
+                        Africa and Australia
                     </p>
-
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+            <div class="postBox">
+                <div class="imgBx">
+                    <img src="assets/img/bioacoustics.jpg" alt="cover" class="cover">
+                </div>
+                <div class="textBx">
+                    <h3>
+                        DSAIL Bioacoustics System
+                    </h3>
                     <p>
-                        <a href="https://kiariegabriel.github.io/about.html">About</a>
+                        Acoustic monitoring of ecosystems is a non-invasive 
+                        method of monitoring ecosystems. This article describe 
+                        the DSAIL Bioacoustics system which is a Raspberry Pi 
+                        based acoustic sensor designed for acoustic monitoring
+                        of bird species.
                     </p>
-
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+            <div class="postBox">
+                <div class="imgBx">
+                    <img src="assets/img/power-board.jpg" alt="cover" class="cover">
+                </div>
+                <div class="textBx">
+                    <h3>
+                        DSAIL Power Management Board:Powering the Raspberry Pi Autonomously Off-the-Grid
+                    </h3>
                     <p>
-                        <a href="https://www.dkut.ac.ke/">Dedan Kimathi University of Technology</a>
+                        The Raspberry Pi is credit card sized single board computer
+                        that finds multiple applications among tech enthusiasts. It
+                        is used in data collection due to its ability to interact with 
+                        the outside world using sensors and its high processing capabilities.
+                        This article describes the DSAIL Power Management Board that is designed
+                        to power the Raspberry Pi autonomously off-the-grid.
                     </p>
-                    <p><a href="https://www.dkut.ac.ke/">Centre for Data Science and Artificial Intelligence</a></p>
-
-                    <ul class="social pt-3">
-                        <li><a href="https://www.linkedin.com/in/gabriel-kiarie-156351131/" target="_blank"><i
-                                    class="fab fa-linkedin"></i></a></li>
-                        <li><a href="https://github.com/kiariegabriel/" target="_blank"><i
-                                    class="fab fa-github"></i></a>
-                        </li>
-                        <li><a href="https://twitter.com/_kiariegabriel" target="_blank"><i
-                                    class="fab fa-twitter"></i></a>
-                        </li>
-                        <li><a href="https://www.instagram.com/kiariegabriel/" target="_blank"><i
-                                    class="fab fa-instagram"></i></a></li>
-                    </ul>
+                    <a href="#" class="btn">Read More</a>
                 </div>
             </div>
         </div>
-    </footer>
-
-    <!-- End Footer -->
-
-
-    <!-- Start Socket -->
-    <div class="socket text-light text-center py-3">
-        <p>&copy; <a href="https://kiariegabriel.github.io" target="_blank">kiariegabriel.github.io</a></p>
+        <div class="postColumn">
+            <div class="postBox">
+                <div class="imgBx">
+                    <img src="assets/img/female-red-collared-widowbird.jpg" alt="cover" class="cover">
+                </div>
+                <div class="textBx">
+                    <h3>
+                        Bioacoustics
+                    </h3>
+                    <p>
+                        Ecosystems degradation and climate change have greatly affected
+                        biodiversity. There is a need to monitor wildlife in order to
+                        preserve it. This article describes bioacoustics which is a
+                        non-invasive method of mon ecosystems remotely and continuously.
+                    </p>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+            <!-- <div class="postBox">
+                <div class="imgBx">
+                    <img src="assets/img/post5.jpg" alt="cover" class="cover">
+                </div>
+                <div class="textBx">
+                    <h3>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Itaque laborum nulla odit laboriosam voluptate ad voluptas 
+                        amet nihil provident deleniti. Temporibus animi exercitationem 
+                        molestiae similique illum harum, sapiente labore cumque.
+                    </h3>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+            <div class="postBox">
+                <div class="imgBx">
+                    <img src="assets/img/post6.jpg" alt="cover" class="cover">
+                </div>
+                <div class="textBx">
+                    <h3>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Itaque laborum nulla odit laboriosam voluptate ad voluptas 
+                        amet nihil provident deleniti. Temporibus animi exercitationem 
+                        molestiae similique illum harum, sapiente labore cumque.
+                    </h3>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="postColumn">
+            <div class="postBox">
+                <div class="imgBx">
+                    <img src="assets/img/post7.jpg" alt="cover" class="cover">
+                </div>
+                <div class="textBx">
+                    <h3>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Itaque laborum nulla odit laboriosam voluptate ad voluptas 
+                        amet nihil provident deleniti. Temporibus animi exercitationem 
+                        molestiae similique illum harum, sapiente labore cumque.
+                    </h3>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+            <div class="postBox">
+                <div class="imgBx">
+                    <img src="assets/img/post8.jpg" alt="cover" class="cover">
+                </div>
+                <div class="textBx">
+                    <h3>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Itaque laborum nulla odit laboriosam voluptate ad voluptas 
+                        amet nihil provident deleniti. Temporibus animi exercitationem 
+                        molestiae similique illum harum, sapiente labore cumque.
+                    </h3>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div>
+            <div class="postBox">
+                <div class="imgBx">
+                    <img src="assets/img/post9.jpg" alt="cover" class="cover">
+                </div>
+                <div class="textBx">
+                    <h3>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Itaque laborum nulla odit laboriosam voluptate ad voluptas 
+                        amet nihil provident deleniti. Temporibus animi exercitationem 
+                        molestiae similique illum harum, sapiente labore cumque.
+                    </h3>
+                    <a href="#" class="btn">Read More</a>
+                </div>
+            </div> -->
+        </div>
     </div>
+    <div class="title">
+        <a href="#" class="btn mgt60">Load More</a>
+    </div>
+</section>
 
-    <!-- End Socket -->
 
-    <!-- End Socket -->
+<!--Contact-->
+<section class="contact" id="contact">
+    <div class="title">
+        <h2>Contact</h2>
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Velit, deleniti quod sapiente optio distinctio nemo, 
+            commodi sequi enim blanditiis soluta animi, quos illo 
+            tempora aliquam consequuntur dolor porro qui cumque.</p>
+    </div>
+    <div class="contactForm">
+        <div class="row">
+            <input type="text" name="" placeholder="First Name">
+            <input type="text" name="" placeholder="Last Name">
+        </div>
+        <div class="row">
+            <input type="text" name="" placeholder="Email Address">
+            <input type="text" name="" placeholder="Mobile No.">
+        </div>
+        <div class="row2">
+            <textarea placeholder="Message"></textarea>
+        </div>
+        <div class="row2">
+            <input type="submit" value="Send" class="btn">
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <a href="#" class="quickLinks">Quick Links</a>
+    <ul class="footerMenu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#blogs">Post</a></li>
+    <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <a href="#" class="socialMedia">Let Us Socialize</a>
+    <ul class="mediaIcons">
+        
+
+        <a href="https://www.linkedin.com/in/gabriel-kiarie-156351131/" target="_blank"><i class="fa fa-linkedin"></i></a>
+        <a href="https://github.com/kiariegabriel/" target="_blank"><i class="fa fa-github"></i></a>
+        <a href="https://twitter.com/__kiarie__" target="_blank"><i class="fa fa-twitter"></i></a>
+    </ul>
+
+    <a href="https://kiariegabriel.github.io" class="copyrightText">©kiariegabriel, 2022 </a>
+</footer>
 
 
+<script>
+    const menuToggle = document.querySelector('.menuToggle');
+    const navigation = document.querySelector('.navigation');
+    menuToggle.onclick = function(){
+        menuToggle.classList.toggle('active');
+        navigation.classList.toggle('active');
+    }
 
-    <!-- Script Source Files -->
+    window.addEventListener('scroll', function(){
+        const header = document.querySelector('header');
+        header.classList.toggle('sticky', window.scrollY > 0);
+    })
 
-    <!-- jQuery -->
-    <script src="js/jquery-3.5.1.min.js"></script>
-    <!-- Bootstrap 4.5 JS -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Popper JS -->
-    <script src="js/popper.min.js"></script>
-    <!-- Font Awesome -->
-    <script src="js/all.min.js"></script>
+    // closing navigation menu after clicking on a link
 
-    <!-- End Script Source Files -->
+    function toggleMenu(){
+        menuToggle.classList.remove('active');
+        navigation.classList.remove('active');
+    }
+
+
+</script>
+
 </body>
-
 </html>
