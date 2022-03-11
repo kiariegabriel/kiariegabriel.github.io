@@ -483,7 +483,7 @@ footer .mediaIcons a i:hover
     .post .contentBx
     {
         grid-template-columns: 1fr;
-        padding: 100px;
+        padding: 80px;
     }
     .post .contentBx .postBox
     {
