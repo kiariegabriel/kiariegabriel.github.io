@@ -96,7 +96,7 @@ section
     position: relative;
     padding: 100px;
     width: 100%;
-    min-height: 100vh;
+    min-height: 60vh;
     background: var(--white);
 }
 .cover
