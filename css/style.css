@@ -1,6 +1,5 @@
 @import url('href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap');
-*
-{
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -96,7 +95,7 @@ section
     position: relative;
     padding: 100px;
     width: 100%;
-    min-height: 60vh;
+    min-height: 100vh;
     background: var(--white);
 }
 .cover
@@ -300,7 +299,7 @@ p
 }
 .mgt60
 {
-    margin-top: 40px;
+    margin-top: 60px;
 }
 .publications
 {
@@ -467,7 +466,11 @@ footer .mediaIcons a i:hover
     }
     section 
     {
-        padding: 5px;
+        padding: 10px;
+        position: relative;
+        width: 100%;
+        min-height: 52vh;
+        background: var(--white);
     }
     .banner .contentBx
     {
@@ -479,9 +482,10 @@ footer .mediaIcons a i:hover
     }
     .post .contentBx
     {
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: 1fr;
+        padding: 100px;
     }
-    .post .contentBx .postColumn .postBox
+    .post .contentBx .postBox
     {
         height: 300px;
     }
