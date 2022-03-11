@@ -469,7 +469,7 @@ footer .mediaIcons a i:hover
         padding: 10px;
         position: relative;
         width: 100%;
-        min-height: 52vh;
+        min-height: 50vh;
         background: var(--white);
     }
     .banner .contentBx
