@@ -168,6 +168,12 @@ header .logo
     margin-left: 2em;
 }
 
+header .logo:hover
+{
+    background: #014c4e;
+    transition: 0.5s;
+}
+
 header .logo-text
 {
     margin: 11px;
