@@ -1,298 +1,333 @@
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Candal|Lora" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link
-    rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
-    
-    <!-- Custom Styling -->
-    <link rel="stylesheet" href="css/style.css">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gabriel Kiarie</title>
+        <link rel="stylesheet" href="/assets/built/screen.css">
+        <link rel="shortcut icon" href="img/favicon.png"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
 
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/img/favicon.png">
+    </head>        
 
-    <title>Gabriel Kiarie</title>
-</head>
-<body>
-    <header>
-        <div class="logo">
-            <a href="index.html"><h1 class="logo-text"><span>Gabriel</span> Kiarie</h1></a>
-        </div>
+    <body class="home-template is-head-b--a_n has-serif-body">
+        <div class="gh-site">
+            <header id="gh-head" class="gh-head gh-outer">
+                <div class="gh-head-inner gh-inner">
+                        <p class="gh-head-description">Glad to Have You Here. Let's Explore.</p>
 
-        <i class="fa fa-bars menu-toggle"></i>
-        <ul class="nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li>
-                <a href="#">Posts <i class="fa fa-chevron-down" style="font-size: .8em;"></i></a>
-                
-                <ul style="left: 0px">
-                    <li><a href="#">Blogs</a></li>
-                </ul>
-            </li>
-            <!-- <li><a href="#">Sign Up</a></li>
-            <li><a href="#">Login</a></li> -->
-            <li>
-                <a href="#">
-                    <i class="fa fa-user"></i>
-                    Gabriel Kiarie
-                    <i class="fa fa-chevron-down" style="font-size: .8em;"></i>
-                </a>
-                <ul>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#" class="logout">Logout</a></li>
-                </ul>
-            </li>
-        </ul>
-    </header>
-
-    <!-- Start Page Wrapper -->
-    <div class="page-wrapper">
-
-        <!-- Start Carousel  -->
-        <div class="post-slider">
-            <h1 class="slider-title">Posts</h1>
-            <i class="fas fa-chevron-left prev"></i>
-            <i class="fas fa-chevron-right next"></i>
-
-            <div class="post-wrapper">
-                
-                <div class="post">
-                    <img src="assets/img/meru-wheat-farm.jpg" alt="image" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="#">Blogs</a></h4>
+                    <div class="gh-head-brand">
+                        <div class="gh-head-brand-wrapper">
+                            <a class="gh-head-logo" href="https://kiariegabriel.github.io/">
+                                /ʌɪ/
+                            </a>
+                        </div>
+                        <button class="gh-burger"></button>
                     </div>
+
+                    <nav class="gh-head-menu">
+                        <ul class="nav">
+                            <li><a href="https://kiariegabriel.github.io/">Home</a></li>
+                            <li class="dropdown">
+                                <button class="dropbtn">Posts
+                                  <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="dropdown-content">
+                                  <a href="posts/nature.html">Nature</a>
+                                  <a href="posts/blogs.html">Technical Blogs</a>
+                                  <a href="posts/remarkable-men.html">Remarkable Men</a>
+                                </div>
+                            </li>
+                            <li><a href="posts/publications.html">Publications</a></li>
+                        </ul>
+
+                    </nav>
                 </div>
+            </header>
+            
+            <main class="gh-main gh-outer">
+                <div class="gh-inner">
+                    <section class="gh-topic gh-topic-grid">
+                            <h2 class="gh-topic-name">
+                                <a href="posts/blogs.html">Technical Blogs</a>
+                                <hr>
+                            </h2>
+
+                            <div class="gh-topic-content">
+
+                                <article class="gh-card post">
+                                    <a class="gh-card-link" href="posts/blogs/dsail-bioacoustics-system.html">
+                                        <figure class="gh-card-image">
+                                            <img
+                                                sizes="(max-width: 1200px) 100vw, 1200px"
+                                                src="posts/blogs/img/bioacoustics-cropped.jpg"
+                                                alt="Cloudy Sky"
+                                            >
+                                        </figure>
+
+                                        <div class="gh-card-wrapper">
+                                            <header class="gh-card-header">
+                                                <h3 class="gh-card-title">
+                                                    DSAIL Bioacoustics System
+                                                </h3>
+                                            </header>
+
+                                            <footer class="gh-card-footer">
+                                                <span class="gh-card-author">Gabriel Kiarie</span>
+                                                <time class="gh-card-date" datetime="2022-09-19">Jun 28, 2021</time>
+                                            </footer>
+                                        </div>
+                                    </a>
+                                </article> 
+                                                       
+                                <article class="gh-card post">
+                                    <a class="gh-card-link" href="posts/blogs/powering-the-raspberrypi.html">
+                                        <figure class="gh-card-image">
+                                            <img
+                                                sizes="(max-width: 1200px) 100vw, 1200px"
+                                                src="posts/blogs/img/power-board.jpg"
+                                                alt="Cloudy Sky"
+                                            >
+                                        </figure>
+
+                                        <div class="gh-card-wrapper">
+                                            <header class="gh-card-header">
+                                                <h3 class="gh-card-title">
+                                                    DSAIL Power Management Board: Powering the Raspberry Pi 
+                                                    Autonomously Off-the-Grid
+                                                </h3>
+                                            </header>
+
+                                            <footer class="gh-card-footer">
+                                                <span class="gh-card-author">Gabriel Kiarie</span>
+                                                <time class="gh-card-date" datetime="2022-09-19">Jan 31, 2021</time>
+                                            </footer>
+                                        </div>
+                                    </a>
+                                </article>
                                 
-                <div class="post">
-                    <img src="assets/img/meru-wheat-farm.jpg" alt="image" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="#">Photography</a></h4>
+                                <article class="gh-card post">
+                                    <a class="gh-card-link" href="posts/blogs/bioacoustics.html">
+                                        <figure class="gh-card-image">
+                                            <img
+                                                sizes="(max-width: 1200px) 100vw, 1200px"
+                                                src="posts/blogs/img/bioacoustics-cropped.jpg"
+                                                alt="Cloudy Sky"
+                                            >
+                                        </figure>
+
+                                        <div class="gh-card-wrapper">
+                                            <header class="gh-card-header">
+                                                <h3 class="gh-card-title">
+                                                    Deploying 'Ears' in Ecosystems: Acoustic Monitoring of Birds
+                                                </h3>
+                                            </header>
+
+                                            <footer class="gh-card-footer">
+                                                <span class="gh-card-author">Gabriel Kiarie</span>
+                                                <time class="gh-card-date" datetime="2022-09-19">Dec 16, 2020</time>
+                                            </footer>
+                                        </div>
+                                    </a>
+                                </article>   
+                            </div>
+
+                            <footer class="gh-topic-footer">
+                                    <a class="gh-topic-link" href="/posts/blogs.html">Show more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                            </footer>
+                    </section>
+
+                    <section class="gh-topic gh-topic-grid">
+                        <h2 class="gh-topic-name">
+                            <a href="blogs.html">Nature</a>
+                            <hr>
+                        </h2>
+
+                        <div class="gh-topic-content">
+                                                   
+                            <article class="gh-card post">
+                                <a class="gh-card-link" href="blogs/indian-ocean-dipole.html">
+                                    <figure class="gh-card-image">
+                                        <img
+                                            sizes="(max-width: 1200px) 100vw, 1200px"
+                                            src="/img/cloudy-sky.jpg"
+                                            alt="Cloudy Sky"
+                                        >
+                                    </figure>
+
+                                    <div class="gh-card-wrapper">
+                                        <header class="gh-card-header">
+                                            <h3 class="gh-card-title">The Indian Ocean Dipole</h3>
+                                        </header>
+
+                                        <footer class="gh-card-footer">
+                                            <span class="gh-card-author">Gabriel Kiarie</span>
+                                            <time class="gh-card-date" datetime="2022-09-19">Oct 7, 2021</time>
+                                        </footer>
+                                    </div>
+                                </a>
+                            </article>
+                             
+                            <article class="gh-card post">
+                                <a class="gh-card-link" href="#">
+                                    <figure class="gh-card-image">
+                                        <img
+                                            sizes="(max-width: 1200px) 100vw, 1200px"
+                                            src="/img/cloudy-sky.jpg"
+                                            alt="Cloudy Sky"
+                                        >
+                                    </figure>
+
+                                    <div class="gh-card-wrapper">
+                                        <header class="gh-card-header">
+                                            <h3 class="gh-card-title">The Indian Ocean Dipole from 2021 to 2022 [upcoming]</h3>
+                                        </header>
+
+                                        <footer class="gh-card-footer">
+                                            <span class="gh-card-author">Gabriel Kiarie</span>
+                                            <!-- <time class="gh-card-date" datetime="2022-09-19">Oct 7, 2021</time> -->
+                                        </footer>
+                                    </div>
+                                </a>
+                            </article>   
+                        </div>
+
+                        <footer class="gh-topic-footer">
+                                <a class="gh-topic-link" href="/posts/nature.html">Show more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        </footer>
+                </section>
+
+
+                <section class="gh-topic gh-topic-grid">
+                    <h2 class="gh-topic-name">
+                        <a href="blogs.html">Remarkable Men</a>
+                        <hr>
+                    </h2>
+
+                    <div class="gh-topic-content">
+                                               
+                        <article class="gh-card post">
+                            <a class="gh-card-link" href="#">
+                                <figure class="gh-card-image">
+                                    <img
+                                        sizes="(max-width: 1200px) 100vw, 1200px"
+                                        src="posts/remarkable-men/img/mlk.jpg"
+                                        alt="Cloudy Sky"
+                                    >
+                                </figure>
+
+                                <div class="gh-card-wrapper">
+                                    <header class="gh-card-header">
+                                        <h3 class="gh-card-title">Martin Luther King Jr: The Great Orator [Upcoming]</h3>
+                                    </header>
+
+                                    <footer class="gh-card-footer">
+                                        <span class="gh-card-author">Gabriel Kiarie</span>
+                                        <!-- <time class="gh-card-date" datetime="2022-09-19">Oct 7, 2021</time> -->
+                                    </footer>
+                                </div>
+                            </a>
+                        </article>  
                     </div>
-                </div>                
-                
-                <div class="post">
-                    <img src="assets/img/meru-wheat-farm.jpg" alt="image" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="#">FunFact</a></h4>
-                    </div>
-                </div>                
-                
-                <div class="post">
-                    <img src="assets/img/meru-wheat-farm.jpg" alt="image" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="#">Drawing</a></h4>
-                    </div>
-                </div>                
-                
-                <div class="post">
-                    <img src="assets/img/meru-wheat-farm.jpg" alt="image" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="#">Book Review</a></h4>
-                    </div>
-                </div>                
-                
-                <div class="post">
-                    <img src="assets/img/meru-wheat-farm.jpg" alt="image" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="#">Fiction</a></h4>
-                    </div>
-                </div>                
-                
-                <div class="post">
-                    <img src="assets/img/meru-wheat-farm.jpg" alt="image" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="#">Programmin</a></h4>
+
+                    <footer class="gh-topic-footer">
+                            <a class="gh-topic-link" href="/posts/remarkable-men.html">Show more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    </footer>
+            </section>
+
+
+
+                    <section class="gh-topic gh-topic-grid">
+                        <h2 class="gh-topic-name">
+                            <a href="blogs.html">Publications</a>
+                            <hr>
+                        </h2>
+
+                        <div class="gh-topic-content">
+                                                   
+                            <article class="gh-card post">
+                                <a class="gh-card-link" href="https://www.sciencedirect.com/science/article/pii/S2468067222000827">
+                                    <figure class="gh-card-image">
+                                        <img
+                                            sizes="(max-width: 1200px) 100vw, 1200px"
+                                            src="/img/power-board.jpg"
+                                            alt="DSAIL Power Board"
+                                        >
+                                    </figure>
+
+                                    <div class="gh-card-wrapper">
+                                        <header class="gh-card-header">
+                                            <h3 class="gh-card-title">DSAIL power management board: Powering the Raspberry Pi autonomously off the grid</h3>
+                                        </header>
+
+                                        <footer class="gh-card-footer">
+                                            <span class="gh-card-author">Gabriel Kiarie</span>
+                                            <time class="gh-card-date" datetime="2022-09-19">July 18, 2021</time>
+                                        </footer>
+                                    </div>
+                                </a>
+                            </article>
+                            <article class="gh-card post">
+                                <a class="gh-card-link" href="https://ieeexplore.ieee.org/document/9576984">
+                                    <figure class="gh-card-image">
+                                        <img
+                                            sizes="(max-width: 1200px) 100vw, 1200px"
+                                            src="posts/blogs/img/bioacoustics-cropped.jpg"
+                                            alt="Cloudy Sky"
+                                        >
+                                    </figure>
+
+                                    <div class="gh-card-wrapper">
+                                        <header class="gh-card-header">
+                                            <h3 class="gh-card-title">
+                                                Raspberry Pi Based Recording System for Acoustic Monitoring of Bird Species
+                                            </h3>
+                                        </header>
+
+                                        <footer class="gh-card-footer">
+                                            <span class="gh-card-author">Gabriel Kiarie</span>
+                                            <time class="gh-card-date" datetime="2022-09-19">Oct 26, 2021</time>
+                                        </footer>
+                                    </div>
+                                </a>
+                            </article>  
+                        </div>
+
+                        <footer class="gh-topic-footer">
+                                <a class="gh-topic-link" href="posts/publications.html">Show more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                        </footer>
+                    </section>                
+                </div>
+            </main>
+
+            <footer class="gh-foot gh-outer">
+                <div class="gh-foot-inner gh-inner">
+                    <div class="footer-section about">
+                        <h2 class="logo-text">Let's Connect</h2>
+                        <div class="contact">
+                            <span><i class="fas fa-phone">&nbsp; +254701978882</i></span>
+                            <span><i class="fas fa-envelope">&nbsp; gabrielkiarie1@gmail.com</i></span>
+                        </div>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/gabriel-kiarie-156351131/"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/kiariegabriel/"><i class="fab fa-github"></i></a>
+                        </div>
+
+                        <div class="gh-copyright">
+                             <a href="https://kiariegabriel.github.io/"  rel="noopener">Gabriel Kiarie © 2022.</a>
+                        </div>
                     </div>
                 </div>
-                
-
-
-
-            </div>
+            </footer>
         </div>
-        <!-- End Carousel  -->
-
-        <!-- Start Content -->
-        <div class="content clearfix">
-
-            <!-- Start Main Content -->
-            <div class="main-content">
-                <h1 class="recent-post-title">Recent Posts</h1>
-
-                <div class="post clearfix">
-                    <img src="/assets/img/cloudy-sky.jpg" alt="image" class="post-image">
-                    <div class="post-preview">
-                        <h2><a href="indian-ocean-dipole.html">The Indian Ocean Dipole</a></h2>
-                        <i class="far fa-user">Gabriel Kiarie</i>
-                        &nbsp;
-                        <i class="far fa-calendar">Oct 9, 2021</i>
-                        <p class="preview-text">
-                            The Indian Ocean dipoles plays an important role in the
-                            weather patterns of Eastern Africa and Australia
-                        </p>
-                        <a href="indian-ocean-dipole.html" class="btn read-more">Read More</a>
-                    </div>
-                </div>
-
-                <div class="post clearfix">
-                    <img src="/assets/img/power-board.jpg" alt="image" class="post-image">
-                    <div class="post-preview">
-                        <h2><a href="powering-the-raspberrypi.html">Powering the Raspberry Pi</a></h2>
-                        <i class="far fa-user">Gabriel Kiarie</i>
-                        &nbsp;
-                        <i class="far fa-calendar">Oct 9, 2021</i>
-                        <p class="preview-text">
-                            The Raspberry is a credit card sized single board computer that
-                            finds multiple use among tech enthusiasts ...
-                        </p>
-                        <a href="powering-the-raspberrypi.html" class="btn read-more">Read More</a>
-                    </div>
-                </div>
-
-                <div class="post clearfix">
-                    <img src="/assets/img/bioacoustics-cropped.jpg" alt="image" class="post-image">
-                    <div class="post-preview">
-                        <h2><a href="dsail-bioacoustics-system.html">DSAIL Bioacoustics System</a></h2>
-                        <i class="far fa-user">Gabriel Kiarie</i>
-                        &nbsp;
-                        <i class="far fa-calendar">Oct 9, 2021</i>
-                        <p class="preview-text">
-                            Acoustic sensors with the ability to process data on board
-                            offer an ideal tool to monitor our ecosystems ...
-                        </p>
-                        <a href="dsail-bioacoustics-system.html" class="btn read-more">Read More</a>
-                    </div>
-                </div>
-
-                <div class="post clearfix">
-                    <img src="/assets/img/female-red-collared-widowbird.jpg" alt="image" class="post-image">
-                    <div class="post-preview">
-                        <h2><a href="bioacoustics.html">Bioacoustics</a></h2>
-                        <i class="far fa-user">Gabriel Kiarie</i>
-                        &nbsp;
-                        <i class="far fa-calendar">Oct 9, 2021</i>
-                        <p class="preview-text">
-                            Acoustic monitoring of ecosystems is a non invasive
-                            method of monitoring wildlife continuously and remotely ...
-                        </p>
-                        <a href="bioacoustics.html" class="btn read-more">Read More</a>
-                    </div>
-                </div>
 
 
+        <script src="/assets/built/main.min.js"></script>
 
-            </div>
+        
+    </body>
 
-            <!-- End Main Content -->
-
-            <!-- Start Sidebar -->
-
-            <div class="sidebar">
-
-                <div class="section search">
-                    <h2 class="section-title">Search</h2>
-                    <form action="index.html" method="post">
-                        <input type="text" name="search-term" class="text-input" placeholder="Search...">
-                    </form>
-                </div>
-
-                <div class="section topics">
-                    <h2 class="section-title">Topics</h2>
-                    <ul>
-                        <li><a href="#">Blogs</a></li>
-                        <li><a href="#">Drawings</a></li>
-                        <li><a href="#">FunFacts</a></li>
-                        <li><a href="#">Photography</a></li>
-                        <li><a href="#">Programming</a></li>
-                        <li><a href="#">Book Reviews</a></li>
-                    </ul>
-                </div>
-
-                <!-- Start Twitter -->
-                <div class="timeline">
-                    <a class="twitter-timeline" data-width="100%" data-height="300" data-theme="dark" href="https://twitter.com/__kiarie__?ref_src=twsrc%5Etfw">Tweets by __kiarie__</a>
-                </div>    
-                <!-- End Twitter -->
-
-            </div>
-
-            <!-- Start Sidebar -->
-
-        </div>
-
-        <!-- End Content -->
-
-    </div>
-    <!-- End Page Wrapper -->
-
-    <!-- Start Footer -->
-    <div class="footer">
-        <div class="footer-content">
-
-            <div class="footer-section about">
-                <h2 class="logo-text">Let's Connect</h2>
-                <div class="contact">
-                    <span><i class="fas fa-phone">&nbsp; +254701978882</i></span>
-                    <span><i class="fas fa-envelope">&nbsp; gabrielkiarie1@gmail.com</i></span>
-                </div>
-                <div class="social">
-                    <a href="https://www.linkedin.com/in/gabriel-kiarie-156351131/"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/kiariegabriel/"><i class="fab fa-github"></i></a>
-                    <a href="https://twitter.com/__kiarie__"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-
-            <div class="footer-section links">
-                <h2>Quick Links</h2>
-                <br>
-                <ul>
-                    <a href="#"><li>Home</li></a>
-                    <a href="#"><li>About</li></a>
-                    <a href="#"><li>Blogs</li></a>
-                </ul>
-            </div>
-
-            <div class="footer-section contact-form">
-                <h2>Leave a Message</h2>
-                <br>
-                <form action="index.html" method="post">
-                    <input type="email" name="email" class="text-input contact-input" placeholder="Email address ...">
-                    <textarea rows="4" name="message" class="text-input contact-input" placeholder="Your message ..."></textarea>
-                    <button type="submit" class="btn btn-big contact-btn">
-                        <i class="fas fa-envelope"></i>
-                        Send
-                    </button>
-                </form>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            &copy; Gabriel Kiarie
-        </div>
-    </div>
-
-    <!-- End Footer -->
-
-    <!-- JQuery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <!-- Slick Carousel -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-    <!-- Twitter -->
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
-    <!-- Custom Script -->
-    <script src="js/scripts.js"></script>
-
-</body>
 </html>

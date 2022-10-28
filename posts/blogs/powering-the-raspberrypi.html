@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gabriel Kiarie</title>
+        <link rel="stylesheet" href="../../assets/built/screen.css">
+        <link rel="shortcut icon" href="../../img/favicon.png"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
+    </head>        
+
+    <body class="home-template is-head-b--a_n has-serif-body">
+        <div class="gh-site">
+            <header id="gh-head" class="gh-head gh-outer">
+                <div class="gh-head-inner gh-inner">
+                    <a class="gh-head-description" href="../blogs.html">Technical Blogs</a>
+
+                    <div class="gh-head-brand">
+                        <div class="gh-head-brand-wrapper">
+                            <a class="gh-head-logo" href="https://kiariegabriel.github.io/">
+                                /ʌɪ/
+                            </a>
+                        </div>
+                        <button class="gh-burger"></button>
+                    </div>
+
+                    <nav class="gh-head-menu">
+                        <ul class="nav">
+                            <li><a href="https://kiariegabriel.github.io/">Home</a></li>
+                            <li class="dropdown">
+                                <button class="dropbtn">Posts
+                                  <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="dropdown-content">
+                                  <a href="../nature.html">Nature</a>
+                                  <a href="../blogs.html">Technical Blogs</a>
+                                  <a href="../remarkable-men.html">Remarkable Men</a>
+                                </div>
+                            </li>
+                            <li><a href="../publications.html">Publications</a></li>
+                        </ul>
+
+                    </nav>
+                </div>
+            </header>
+
+
+            <main class="gh-main">
+                <article class="gh-article post tag-bayes">
+        
+                    <header class="gh-article-header gh-canvas">
+                        <p class="gh-article-tag"><b>Keywords:</b> Ecosystems, Bioacoustics, Conservertion, Birds</p>
+        
+                        <h1 class="gh-article-title">
+                            DSAIL Power Management Board: Powering the Raspberry Pi 
+                            Autonomously Off-the-Grid
+                        </h1>
+        
+                        <aside class="gh-article-sidebar">
+        
+                            <div class="gh-author-image-list">
+                                <a class="gh-author-image" href="#">
+                                <img src="img/passport.jpg" alt="auth.">
+                                </a>
+                            </div>
+        
+                            <div class="gh-author-name-list">
+                                <h4 class="gh-author-name">
+                                    <a href="#">Gabriel Kiarie</a>
+                                </h4>                                    
+                            </div>
+        
+                            <div class="gh-article-meta">
+                                <div class="gh-article-meta-inner">
+                                    <time class="gh-article-date" datetime="2022-01-27">Jan 31, 2021</time>
+                                    <span class="gh-article-meta-sep"></span>
+                                    <span class="gh-article-length">7 min</span>
+                                </div>
+                            </div>
+                        </aside>
+
+                        <p class="gh-article-excerpt">
+                            A Raspberry Pi based acoustic sensor.
+                        </p>
+                           
+                    </header>
+        
+                    <section class="gh-content gh-canvas">
+                        <h2> Introduction</h2>
+
+                        <p>
+                            One of the most crucial factors when designing sensors to deploy in the field is power. The main
+                            challenge is usually to lengthen the time of operation of the sensors since most of them are
+                            battery powered.
+                        </p>
+
+                        <p>
+                            The Raspberry Pi is an inexpensive and powerful single board computer that finds many
+                            applications in sensor systems. It can be configured to work with high-specification hardware
+                            and consumes less power. When designing a Raspberry Pi system to deploy in the field, the
+                            problem of powering the system needs to be handled carefully. Like in normal computers, there is
+                            constant reading and writing on to the storage of the Raspberry Pi. This means that care needs
+                            to be taken when shutting down the Raspberry Pi. Abrupt disconnection from power may result in
+                            corruption and hence loss of data in its storage.
+                        </p>
+
+                        <p>
+                            When designing the <a href="https://www.dkut.ac.ke/" target="_blank">DSAIL Bioacoustics
+                                System</a>. (that is
+                            based on the Raspberry Pi single board
+                            computer), the first step was to design a circuit to power the Raspberry Pi intelligently. The
+                            system is powered by a solar panel and a lithium battery. In the following sections, we will
+                            look at the design of the circuit.
+                        </p>
+
+                        <h2>Requirements of the design</h2>
+
+                        <p>
+                            The circuit design for powering the Raspberry Pi was to meet the following requirements:
+                        </p>
+
+                        <ul>
+                            <li>Provide the Raspberry Pi with a constant voltage (5.1V),</li>
+                            <li>Enable the Raspberry Pi to monitor the voltage of the battery,</li>
+                            <li>Provide the Raspberry Pi with the ability to shut down the system,</li>
+                            <li>A mechanism to wake the system after the battery has recharged </li>
+                        </ul>
+
+                        <h3>Provide the Raspberry Pi with a constant voltage</h3>
+
+                        <p>
+                            The Raspberry Pi operates at a voltage of 5.1V. For proper performance of the Raspberry Pi, it
+                            is necessary to provide it with the rated voltage. Our system uses a 3.7V lithium battery. To
+                            obtain 5.1V from the battery, we used a boost converter to step up the dc voltage.
+                        </p>
+
+                        <h3>Enable the Raspberry Pi to monitor the voltage of the battery</h3>
+
+                        <p>
+                            Lithium cells are not constant voltage generators. The voltage of a cell drops as charge is
+                            being drawn from it. Using this fact, we can monitor the <a href="#State of charge (SOC)">state
+                                of
+                                charge</a> (SOC) of the battery.
+                            Monitoring the voltage of the battery was a crucial requirement for our design. One reason is to
+                            ensure that the Raspberry Pi does not shut down due to the battery getting drained. The other
+                            reason is to lengthen the life of the battery by preventing over discharge.
+                            The board employs the <a href="https://learn.adafruit.com/mcp3008-spi-adc/python-circuitpython"
+                                target="_blank">MCP3008</a> analog to digital converter (ADC) to enable the Raspberry to
+                            read
+                            the voltage of the battery. The Raspberry Pi lacks an onboard ADC hence cannot read the voltage
+                            which is an analog quantity. The ADC samples the voltage reading of the battery and feeds a
+                            digital form of the reading to the Raspberry Pi through the GPIO pins. Using the voltage
+                            reading, the Raspberry Pi is able to monitor the SOC of the battery and shutdown the system
+                            whenever the voltage drops to the rated <a href="#Cut-off voltage">cut-off voltage</a> of the
+                            battery. This ensures that the
+                            battery never goes below the rated cut-off voltage (2.8V for our battery) hence lengthening its
+                            life cycle.
+
+                        </p>
+
+                        <h3>Provide the Raspberry Pi with the ability to shut down the system</h3>
+
+                        <p>
+                            When the voltage of the battery drops to the cut-off voltage, the entire system needs to be shut
+                            down. This should be done in a way that accommodates for safe shutdown of the Raspberry Pi. To
+                            achieve this, we used a combination of a 555 timer and a decade counter. The timer is connected
+                            in astable mode to produce a square wave of period 4s. The output of the timer is fed to a
+                            decade counter. The decade counter tenth output pin is used to trigger the shutdown of the
+                            entire system. The aim of this setup is to delay the disconnection of the system from power to
+                            give the Raspberry Pi enough time to shut down in the conventional way.
+                        </p>
+
+                        <p>
+                            When the Raspberry Pi has 'decided' to shutdown, it triggers a <a href="#Thyristor">thyristor
+                            </a> that connects the <a href="#555-timer">555 timer
+                            </a>
+                            and decade counter circuit to power. The timer starts producing pulses that are counted by
+                            the decade counter. On the tenth pulse, the tenth pin of the <a href="#Decade counter">decade
+                                counter
+                            </a> disconnects the
+                            entire system from power. The decade counter's output triggers a transistor that withdraws
+                            momentarily the anode current of the thyristor connecting the entire system to power hence
+                            shutting the entire system. The entire process of shutting down the entire system takes
+                            approximately 40s since we count ten pulses of period 4s each before the system is shut down.
+                            This gives the Raspberry Pi more than enough time to shutdown safely before the power is
+                            disconnected.
+                        </p>
+
+                        <h3>A mechanism to wake the system after the battery has recharged</h3>
+
+                        <p>
+                            After the system has shut down, the battery is will be charged by the solar panel. The system
+                            should then wake up and start operating. To achieve this, we incorporated a <a
+                                href="https://learn.adafruit.com/adafruit-ds3231-precision-rtc-breakout/overview"
+                                target="_blank">DS3231
+                            </a>
+                            real time clock(RTC) on the board. The RTC is equipped with an alarm interrupt that can be
+                            utilized to
+                            schedule the wake up of the system. Before the Raspberry Pi shuts down, it sets the alarm of the
+                            RTC to schedule for the time it should wake up. When the time of the RTC matches that of the set
+                            alarm, the alarm interrupt is used to trigger the system to wake it up. The RTC is also helpful
+                            in setting the time of the Raspberry Pi since it lacks an onboard RTC. This is especially
+                            important for timestamping the saved bird audio recordings.
+                        </p>
+
+                        <h2>Design of the DSAIL Power Management Board</h2>
+
+                        <p>
+                            Guided by the above requirements, we designed the DSAIL Power management board using basic
+                            electrical and electronic components. The design was first carried out on <a
+                                href="https://www.labcenter.com/" target="_blank">Proteus
+                            </a> software.
+                            Proteus is a simulation software that is used in the design of electrical circuits and printed
+                            circuit boards (PCB). Use of simulation software in designing helps one to analyse the
+                            performance and suitability of a design without actually making the prototype using the actual
+                            components. This makes it cheaper, faster and increases flexibility of the design process.
+                        </p>
+               
+
+                        <div class="blog-image">
+                            <img src="img/power-board-schematic.jpg" alt="Responsive image">
+                        </div>
+                        <p class="caption"> 
+                            Figure 1: Schematic diagram of the DSAIL Power Management Board circuit.
+                        </p>
+
+                        <p>
+                            After designing the circuit on Proteus, we acquired the components that were required for the
+                            design. The components were obtained from <a href="https://www.pixelelectric.com/"
+                                target="_blank">Pixel Electric Engineering
+                                Ltd
+                            </a> and <a href="https://store.nerokas.co.ke/" target="_blank">Nerokas Engineering Solutions.
+                            </a>
+                            The circuit was first prototyped on a <a href="#Breadboard"> breadboard.
+                            </a> Once we were comfortable with
+                            design, we proceeded to making a printed circuit board for the circuit.
+                        </p>
+
+                        <p>
+                            For the PCB design, we used <a href="https://kicad.org/" target="_blank"> KiCad
+                            </a>software. KiCad enables one to design a schematic of an
+                            electronic circuit and then convert it to a PCB design. The PCB design is then then exported as
+                            a PDF and printed on an A4 paper with toner (photograph paper, mate). The toner is then placed
+                            on the copper clad board face down and then the printed tracks of the PCB design are transferred
+                            to the board using a hot iron box. Using special chemicals, the copper on the board is removed
+                            leaving only the parts that have been covered by the toner. This forms the copper tracks for
+                            electrical conduction of the board. This process is called etching.
+                        </p>
+
+                        
+
+
+                        <div class="blog-image">
+                            <img src="img/power-board-pcb-300.jpg" alt="Responsive image">
+                        </div>
+                        <p class="caption">
+                            Figure 2: PCB design of the DSAIL Power Management Board circuit. 
+                        </p>
+
+                        
+
+                        <p>
+                            After the etching process is complete, the components can now be placed on the board and
+                            soldered. We transferred the components and soldered them carefully. We then tested the board
+                            and it successfully powered our Raspberry Pi as expected. It was an achievement!!! Figure 3
+                            below shows the DSAIL Power Management Board.
+                        </p>
+
+
+                        <div class="blog-image">
+                            <img src="img/power-board.jpg" alt="Responsive image">
+                        </div>
+                        <p class="caption">Figure 3: DSAIL Power Management Board. </p>
+
+                        <p>
+                            A program was also written on the Raspberry Pi to control some components of the board. The
+                            program enables the Raspberry Pi to read the output of the MCP3008 ADC, set the alarm of the RTC
+                            and to initiate the process of shutting down the system.
+                        </p>
+
+                        <h2>System Performance</h2>
+
+                        <p>
+                            After developing the system, we carried test both in the lab and in the field. Figure 4 below
+                            shows the DSAIL Power Management Board and a 6,600 mAh, 3.7 V lithium battery being used to power
+                            a Raspberry Pi based acoustic sensor.
+                        </p>
+
+
+                        <div class="blog-image">
+                            <img src="img/acoustic-sensor-adapter.jpg" alt="Responsive image">
+                        </div>
+                        <p class="caption"> 
+                            Figure 4: The DSAIL Power Management Board and a 6,600 mAh, 3.7 V powering the Raspberry Pi. 
+                        </p>
+
+
+                        <p>
+                            We have deployed the system for testing and also for collecting acoustic data of birds. The
+                            system performed efficiently during the initial deployments at <a href="https://www.dkut.ac.ke/"
+                                target="_blank"> Dedan Kimathi University ofTechnology</a>. The system was set to operate
+                            during a certain window of time in a day due to power
+                            constraint. The system wakes up at 5 am and operates up to 11 am when birds are most active and
+                            then shuts down for the battery to charge. During this period, the system was able to shut down
+                            as expected. The Raspberry Pi was also able to successfully monitor the voltage profile of the
+                            battery when the system was operating. Figure 5 below show the voltage profile of the battery
+                            during the deployment at Dedan Kimathi University of Technology Conservancy from 16th to 20th
+                            November, 2020.
+                        </p>
+
+
+                        <div class="blog-image">
+                            <img src="img/voltage-profile.png" alt="Responsive image">
+                        </div>
+                        <p class="caption"> 
+                            Figure 5: The voltage profile of the battery from 16<sup>th</sup> to 17<sup>th</sup> November, 2020. 
+                        </p>
+
+
+                        <p>
+                            From figure 5 above, we can observe the discharge and charging of the battery. It can also be
+                            observed that the voltage of the battery always started at a value higher than the voltage
+                            before the system shutdown in the previous day. This is a proof that the battery was being
+                            charged when the system shut down
+                        </p>
+
+
+                        <h2>Conclusion</h2>
+
+                        <p>
+                            Power is one of the most crucial factors to consider when designing sensors to deploy in the
+                            field. It is even more important when it comes to systems that are based on the Raspberry Pi.
+                            Care needs to be taken to ensure that the Raspberry Pi does not shut down due to batteries used
+                            to power it getting drained. At DSAIL, we designed the DSAIL Power Management Board to power the
+                            Raspberry Pi intelligently. The board ensures that the Raspberry Pi can monitor the battery and
+                            shutdown whenever the battery voltage drops to the cut-off voltage. The board also enables the
+                            Raspberry Pi to schedule the time it intends the system to wake up after the battery has been
+                            charged by a solar panel. Therefore, the DSAIL Power Management Board is an efficient design for
+                            powering the Raspberry Pi in the field.
+                        </p>
+
+
+                        <h6>Glossary</h6>
+
+                        <p>
+                            <a id="555 timer">555 timer</a>- is one of the most used integrated circuit (IC). It is used
+                            together with an external RC (resistor-capacitor) circuit to produce a variety of waveforms.
+                        </p>
+
+                        <p>
+                            <a id="Breadboard">Breadboard</a>- A solderless device that is used in developing electronic
+                            circuit prototypes for testing.
+                        </p>
+
+                        <p>
+                            <a id="Cut-off voltage">Cut-off voltage</a>- the voltage at which the battery is said to be
+                            completely discharged. Further discharge beyond this point will shorten the life of the 
+                            battery or destroy it completely.
+                        </p>
+
+                        <p>
+                            <a id="Decade counter">Decade counter</a>- a digital electronic circuits that is used to count
+                            pulses. Each pulse applied to its clock increments or decrements the number in the counter. 
+                            A decade counter can count up to 10 pulses.
+                        </p>
+
+                        <p>
+                            <a id="State of charge (SOC)">State of charge (SOC)</a>- the ratio of current charge in a
+                            battery to its rated capacity.
+                            It is expressed as percentage (0% to 100%). A full battery will have a SOC of 100%, while a
+                            fully discharged battery will have a SOC of 0%.
+                        </p>
+
+                        <p>
+                            <a id="Thyristor">Thyristor</a>- also called a silicon controlled
+                            rectifier (SCR) is a three terminals (anode, gate, cathode) solid state device that is turned ON
+                            by applying a gate signal on its gate. The SCR remains ON even after the gate signal is
+                            withdrawn (latching) provided the anode current is above the holding current (threshold value of
+                            current below which an SCR turns OFF). One of the ways of turning the thyristor off is by
+                            withdrawing the anode current momentarily.
+                        </p>
+                    </section>
+        
+                </article>
+        
+                <div class="gh-read-next gh-canvas">
+                    <section class="gh-pagehead">
+                        <h4 class="gh-pagehead-title">Read next</h4>
+                    </section>
+        
+                    <div class="gh-topic gh-topic-grid">
+                        <div class="gh-topic-content">                            
+        
+                            <article class="gh-card post">
+                                <a class="gh-card-link" href="bioacoustics.html">
+                                    <figure class="gh-card-image">
+                                        <img
+                                            sizes="(max-width: 1200px) 100vw, 1200px"
+                                            src="img/bioacoustics-cropped.jpg"
+                                            alt="DSAIL Bioacoustics System"
+                                        >
+                                    </figure>
+            
+                                    <div class="gh-card-wrapper">
+                                        <header class="gh-card-header">
+                                            <h3 class="gh-card-title">
+                                                Deploying 'Ears' in Ecosystems: Acoustic Monitoring of Birds
+                                            </h3>
+                                        </header>
+                            
+                                        <div class="gh-card-excerpt">
+                                            Listening to the wild.
+                                        </div>
+                            
+                                        <footer class="gh-card-footer">
+                                            <span class="gh-card-author">Gabriel Kiarie</span>
+                                            <time class="gh-card-date" datetime="2022-03-08">Dec 16, 2020</time>
+                                        </footer>
+                                    </div>
+                                </a>
+                            </article>
+
+                            <article class="gh-card post">
+                                <a class="gh-card-link" href="dsail-bioacoustics-system.html">
+                                    <figure class="gh-card-image">
+                                        <img
+                                            sizes="(max-width: 1200px) 100vw, 1200px"
+                                            src="img/bioacoustics-cropped.jpg"
+                                            alt="DSAIL Bioacoustics System"
+                                        >
+                                    </figure>
+            
+                                    <div class="gh-card-wrapper">
+                                        <header class="gh-card-header">
+                                            <h3 class="gh-card-title">
+                                                DSAIL Bioacoustics System
+                                            </h3>
+                                        </header>
+                            
+                                        <div class="gh-card-excerpt">
+                                            A Raspberry Pi based acoustic sensor.
+                                        </div>
+                            
+                                        <footer class="gh-card-footer">
+                                            <span class="gh-card-author">Gabriel Kiarie</span>
+                                            <time class="gh-card-date" datetime="2022-03-08">Jun 28, 2021</time>
+                                        </footer>
+                                    </div>
+                                </a>
+                            </article>
+
+                        </div>
+                    </div>
+                    <footer class="gh-topic-footer">
+                        <a class="gh-topic-link" href="../blogs.html">Show more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    </footer>
+                </div>
+                
+                    
+            </main>
+
+            <footer class="gh-foot gh-outer">
+                <div class="gh-foot-inner gh-inner">
+                    <div class="footer-section about">
+                        <h2 class="logo-text">Let's Connect</h2>
+                        <div class="contact">
+                            <span><i class="fas fa-phone">&nbsp; +254701978882</i></span>
+                            <span><i class="fas fa-envelope">&nbsp; gabrielkiarie1@gmail.com</i></span>
+                        </div>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/gabriel-kiarie-156351131/"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/kiariegabriel/"><i class="fab fa-github"></i></a>
+                        </div>
+
+                        <div class="gh-copyright">
+                             <a href="https://kiariegabriel.github.io/"  rel="noopener">Gabriel Kiarie © 2022.</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+
+        <script src="../../assets/built/main.min.js"></script>
+
+    </body>
+
+</html>
