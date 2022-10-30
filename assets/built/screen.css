@@ -3278,12 +3278,7 @@ body:not(.home-template) .gh-topic-grid .gh-topic-content
 
 @media 
 (max-width:991px)
-{
-     .gh-head-description
-    {
-        display:none
-    }
-    
+{    
     .gh-topic-grid .gh-topic-content
     {
         grid-template-columns:1fr
