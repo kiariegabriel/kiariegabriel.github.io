@@ -3584,6 +3584,15 @@ body:not(.home-template) .gh-topic-grid .gh-topic-content
 }
 
 
+@media (max-width:767px)
+{
+    .blog-image:hover
+    {
+        transform: scale(1.0);
+    }
+}
+
+
 
 .pub-link
  {
