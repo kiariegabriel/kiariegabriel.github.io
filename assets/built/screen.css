@@ -3578,18 +3578,9 @@ body:not(.home-template) .gh-topic-grid .gh-topic-content
     font-size: 0.8em;
 }
 
-.blog-image:hover
+.blog-image2:hover
 {
-    transform: scale(1.5);
-}
-
-
-@media (max-width:767px)
-{
-    .blog-image:hover
-    {
-        transform: scale(1.0);
-    }
+    transform: scale(1.6);
 }
 
 
