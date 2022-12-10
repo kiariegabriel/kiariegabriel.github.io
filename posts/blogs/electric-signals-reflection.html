@@ -9,6 +9,7 @@
         <link rel="shortcut icon" href="../../img/favicon.png"/>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
+        <script type=”text/javascript” src=”http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML”></script>
     </head>        
 
     <body class="home-template is-head-b--a_n has-serif-body">
@@ -52,12 +53,11 @@
         
                     <header class="gh-article-header gh-canvas">
                         <p class="gh-article-tag">
-				    <b>Keywords:</b> Sensor power management, Solar power, Ecological data collection, Long term deployment
+				    <b>Keywords:</b> Impedance, Short circuit, Open Circuit
 				</p>
         
                         <h1 class="gh-article-title">
-                            DSAIL Power Management Board: Powering the Raspberry Pi 
-                            Autonomously Off-the-Grid
+                            Reflection of Electric Signals in Conducting Cables
                         </h1>
         
                         <aside class="gh-article-sidebar">
@@ -84,43 +84,122 @@
                         </aside>
 
                         <p class="gh-article-excerpt">
-                            A Raspberry Pi based acoustic sensor.
+                            Reflection of electric signals demystified.
                         </p>
                            
                     </header>
         
                     <section class="gh-content gh-canvas">
-                        <h2> Introduction</h2>
-
                         <p>
-                            One of the most crucial factors when designing sensors to deploy in the field is power. The main
-                            challenge is usually to lengthen the time of operation of the sensors since most of them are
-                            battery powered.
+                            Our universe is governed by laws. All scientific phenomena 'subconsciously' follow all laws that 
+                            govern them. One fascinating thing about these phenomena is that you can explain them using different 
+                            points of view. This, I think, is the reason why 
+                            <a href="https://www.britannica.com/biography/Albert-Einstein" target="_blank">Albert Einstein</a>
+                            was seeking to find a
+                            <a href="https://www.britannica.com/science/unified-field-theory" target="_blank">unified field theory</a> 
+                            that would combine his theory of gravitation and electromagnetism during the last three decades 
+                            of his life. Electromagnetism in itself is a unification of two phenomena (electricity and magnetism) 
+                            that were thought to be unrelated. First proposed by 
+                            <a href="https://www.britannica.com/biography/Michael-Faraday" target="_blank">Michael Faraday</a>, 
+                            then theoretically formulated into the 
+                            four 
+                            <a href="https://www.britannica.com/science/Maxwells-equations" target="_blank">electromagnetic equations</a> 
+                            by
+                            <a href="https://www.britannica.com/biography/James-Clerk-Maxwell" target="_blank">James Clerk Maxwell</a> 
+                            and later proved experimentally by 
+                            <a href="https://www.britannica.com/biography/Heinrich-Hertz" target="_blank">Heinrich Hertz</a>, 
+                            electromagnetism combines at least three laws; 
+                            <a href="https://www.britannica.com/science/Faradays-law-of-induction" target="_blank">Faraday's</a>, 
+                            <a href="https://www.britannica.com/science/Coulomb-force" target="_blank">Coulomb's</a> 
+                            and 
+                            <a href="https://www.britannica.com/science/Amperes-law" target="_blank">Ampere's</a> laws.
                         </p>
 
                         <p>
-                            The Raspberry Pi is an inexpensive and powerful single board computer that finds many
-                            applications in sensor systems. It can be configured to work with high-specification hardware
-                            and consumes less power. When designing a Raspberry Pi system to deploy in the field, the
-                            problem of powering the system needs to be handled carefully. Like in normal computers, there is
-                            constant reading and writing on to the storage of the Raspberry Pi. This means that care needs
-                            to be taken when shutting down the Raspberry Pi. Abrupt disconnection from power may result in
-                            corruption and hence loss of data in its storage.
+                            Now, the reason I started with all that jargon was due to an interesting observation that I made while I was 
+                            studying literature on Time Domain Reflectometry (TDR). Multiple approaches were used to explain reflection 
+                            of electric signals in cables. Examples of the approaches used were circuit theory, principle of conservation 
+                            of energy and charge, RADAR and waves in water. This blog combines some of these concepts to explain reflection 
+                            of electric signals.
                         </p>
 
                         <p>
-                            When designing the <a href="dsail-bioacoustics-system.html" target="_blank">DSAIL Bioacoustics
-                                System</a>. (that is
-                            based on the Raspberry Pi single board
-                            computer), the first step was to design a circuit to power the Raspberry Pi intelligently. The
-                            system is powered by a solar panel and a lithium battery. In the following sections, we will
-                            look at the design of the circuit.
+                            An electric signal travelling down an electric cable gets reflected wholly or partially when it encounters impedance 
+                            discontinuities in the cable. To explain how impedance discontinuities, cause reflection of an incident signal, let's 
+                            state some laws and theorems
                         </p>
 
-                        <h2>Requirements of the design</h2>
+                        <h3>i. Finite speed of electricity</h3>
 
                         <p>
-                            The circuit design for powering the Raspberry Pi was to meet the following requirements:
+                            When one switches on the lights in a dark room, the lights come on instantaneously (some lighting technologies may 
+                            take time). This can make one believe that electricity travels at an infinite speed. However, electricity has a 
+                            finite speed. Electricity travels in an electric cable at the speed close to the speed of light in vacuum. The ratio 
+                            of the speed of electricity in a conductor to that of light in a vacuum is called the velocity factor, $$VF$$ .
+                            <math display='block'>
+                                <mrow>
+                                 <mi>V</mi><mi>F</mi></mrow>
+                            </math>
+                            <math display='block'>
+                                <mrow>
+                                 <mfrac>
+                                  <mrow>
+                                   <mo>&#x2212;</mo><mi>b</mi><mo>&#x00B1;</mo><msqrt>
+                                    <mrow>
+                                     <msup>
+                                      <mi>b</mi>
+                                      <mn>2</mn>
+                                     </msup>
+                                     <mo>&#x2212;</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow>
+                                   </msqrt>
+                                   </mrow>
+                                  <mrow>
+                                   <mn>2</mn><mi>a</mi></mrow>
+                                 </mfrac>
+                                 </mrow>
+                               </math>
+                                  
+
+                               <math display='block' xmlns='http://www.w3.org/1998/Math/MathML'>
+                                <mrow>
+                                 <mfrac>
+                                  <mrow>
+                                   <mo>&#x2212;</mo><mi>b</mi><mo>&#x00B1;</mo><msqrt>
+                                    <mrow>
+                                     <msup>
+                                      <mi>b</mi>
+                                      <mn>2</mn>
+                                     </msup>
+                                     <mo>&#x2212;</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow>
+                                   </msqrt>
+                                   </mrow>
+                                  <mrow>
+                                   <mn>2</mn><mi>a</mi></mrow>
+                                 </mfrac>
+                                 </mrow>
+                               </math>
+
+
+                               <math display='block'>
+                                <mrow>
+                                 <mfrac>
+                                  <mrow>
+                                   <mo>&#x2212;</mo><mi>b</mi><mo>&#x00B1;</mo><msqrt>
+                                    <mrow>
+                                     <msup>
+                                      <mi>b</mi>
+                                      <mn>2</mn>
+                                     </msup>
+                                     <mo>&#x2212;</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow>
+                                   </msqrt>
+                                   </mrow>
+                                  <mrow>
+                                   <mn>2</mn><mi>a</mi></mrow>
+                                 </mfrac>
+                                 </mrow>
+                               </math>
+                               
+                               
                         </p>
 
                         <ul>
