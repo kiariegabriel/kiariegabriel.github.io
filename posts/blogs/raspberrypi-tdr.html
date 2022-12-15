@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gabriel Kiarie</title>
+        <link rel="stylesheet" href="../../assets/built/screen.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" href="../../img/favicon.png"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>        
+
+    <body class="home-template is-head-b--a_n has-serif-body">
+        <div class="gh-site">
+            <header id="gh-head" class="gh-head gh-outer">
+                <div class="gh-head-inner gh-inner">
+                    <a class="gh-head-description" href="../blogs.html">Technical Blogs</a>
+
+                    <div class="gh-head-brand">
+                        <div class="gh-head-brand-wrapper">
+                            <a class="gh-head-logo" href="https://kiariegabriel.github.io/">
+                                Gabriel Kiarie
+                            </a>
+                        </div>
+                        <button class="gh-burger"></button>
+                    </div>
+
+                    <nav class="gh-head-menu">
+                        <ul class="nav">
+                            <li><a href="https://kiariegabriel.github.io/">Home</a></li>
+                            <li class="dropdown">
+                                <button class="dropbtn">Posts
+                                  <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="dropdown-content">
+                                  <a href="../nature.html">Nature</a>
+                                  <a href="../blogs.html">Technical Blogs</a>
+                                  <a href="../remarkable-men.html">Remarkable Men</a>
+                                </div>
+                            </li>
+                            <li><a href="../publications.html">Publications</a></li>
+                        </ul>
+
+                    </nav>
+                </div>
+            </header>
+
+
+            <main class="gh-main">
+                <article class="gh-article post tag-bayes">
+        
+                    <header class="gh-article-header gh-canvas">
+                        <p class="gh-article-tag">
+                            <b>Keywords:</b> 
+                            Time domain reflectometer, Reflection, analogue to digital converter, fault, 
+                            Impedance discontinuity
+                        </p>
+        
+                        <h1 class="gh-article-title">
+                            A Raspberry Pi Based Time Domain Reflectometer (TDR)
+                        </h1>
+        
+                        <aside class="gh-article-sidebar">
+        
+                            <div class="gh-author-image-list">
+                                <a class="gh-author-image" href="#">
+                                <img src="img/passport.jpg" alt="auth.">
+                                </a>
+                            </div>
+        
+                            <div class="gh-author-name-list">
+                                <h4 class="gh-author-name">
+                                    <a href="#">Gabriel Kiarie</a>
+                                </h4>                                    
+                            </div>
+        
+                            <div class="gh-article-meta">
+                                <div class="gh-article-meta-inner">
+                                    <time class="gh-article-date" datetime="2022-01-27">Dec 15, 2022</time>
+                                    <span class="gh-article-meta-sep"></span>
+                                    <span class="gh-article-length">5 min</span>
+                                </div>
+                            </div>
+                        </aside>
+
+                        <p class="gh-article-excerpt">
+                            A low-cost TDR system.
+                        </p>
+                           
+                    </header>
+        
+                    <section class="gh-content gh-canvas">
+
+                        <p>
+                            A Time Domain Reflectometer (TDR) is a device that is used to locate faults in electric cables. 
+                            It is based on the principle of reflection of electric signals by faults. A TDR sends a fast rising 
+                            rectangular pulse down a cable, samples it at the input and processes the sampled signal to determine 
+                            presence of a fault in the cable. A TDR is also able to determine the type of the fault and its point 
+                            of occurrence. To read further on time domain reflectometry, check this 
+                            <a 
+                                href="https://kiariegabriel.github.io/posts/blogs/tdr.html" target="_blank">
+                                post
+                            </a>.  
+                            There are commercial TDRs 
+                            in the market from manufacturers like Tektronix and Megger. These TDRs are, however, expensive (ranging 
+                            from hundreds to thousands of dollars). At the Centre for Data Science and Artificial Intelligence (DSAIL), 
+                            we have developed a low-cost Raspberry Pi based TDR.
+                        </p>
+
+                        <h2>Conceptualisation</h2>
+
+                        <p>
+                            From our interactions with rangers from 
+                            <a 
+                                href="https://www.olpejetaconservancy.org/" target="_blank">
+                                Ol Pejeta Conservancy 
+                            </a>
+                            and 
+                            <a 
+                                href="https://conservancy.dkut.ac.ke/" target="_blank">
+                                Dedan Kimathi University of Technology Wildlife Conservancy
+                            </a>, 
+                            we learnt that their perimeter electric fences are prone to faults. To detect these faults, they have to 
+                            do periodic monitoring of the fences. Once they detect a fault, they walk along the fence with a voltmeter 
+                            measuring the voltage of the fence. The voltage is expected to dip at the sections of the fence beyond the fault. 
+                        </p>
+
+                        <p>
+                            This method of fault detection and localisation is inefficient. Firstly, a person is required to do periodic 
+                            monitoring of the fence. This means the fault detection process may not be timely. Secondly, the localisation 
+                            procedure that involves walking along the fence is laborious and time consuming given the long cables that are 
+                            used to create the fences. The Dedan Kimathi University of Technology Conservancy, for example, with an area of
+                            <math display='inline'><mrow><mi>1</mi><mi>2</mi><mi>6</mi></mrow></math>
+                            <math display='inline'>
+                                <mrow>
+                                    <mi>a</mi>
+                                    <mi>c</mi>
+                                    <mi>r</mi>
+                                    <mi>e</mi>
+                                    <mi>s</mi>
+                                </mrow></math>
+                            has a
+                            <math display='inline'><mrow><mi>4</mi><mi>.</mi><mi>8</mi></mrow></math>
+                            <math display='inline'><mrow><mi>k</mi><mi>m</mi></mrow></math>
+                            long perimeter fence. Larger Protected Areas (PAs) have fences that span to hundreds of kilometres. 
+                        </p>
+
+                        <p>
+                            At DSAIL, we set out to look for a solution to help the rangers solve the problem of fault detection and 
+                            localisation in electric fences. While working with a friend from Telkom Kenya, well technically I was not 
+                            working but 'hitchhiking' since he travels to different parts of the country. So, from these trips I learnt 
+                            that they use a device called an Optical Time Domain Reflectometer (OTDR) to detect and localise faults in 
+                            fibre optic cables. An OTDR sends an optical pulse down a fibre optic cable and analyses the reflected pulse 
+                            to detect and localise faults. This sparked an interest in me and I thought that I should see if this concept 
+                            can be used to detect and localise faults in electric fences. From my research, I came across the concept of 
+                            time domain reflectometry in electric cables.
+                        </p>
+
+                        <p>
+                            From my observations, I realised that the existing time domain reflectometry technologies are expensive. 
+                            They also required the presence of a person to be operated. This makes them unsuitable to use with electric 
+                            fences. To help solve this problem, I started looking for ways to develop a low-cost TDR that can be easily 
+                            interfaced with the fence. The goal was to develop a TDR based on a low-cost microcontroller, a Single Board 
+                            Computer (SBC) or a Field Programmable Gate Array (FPGA). The microcontrollers were not fast enough for this 
+                            task and the FPGAs were expensive so I decided to explore the SBCs. 
+                        </p>
+
+                        <p>
+                            A basic TDR comprises a fast-rising pulse generator, a fast-sampling Analogue to Digital Converter (ADC) 
+                            and a processing unit. Figure 1 shows a block diagram of a TDR.
+                        </p>
+
+                        <div class="blog-image">
+                            <img src="img/tdr-system-block-diagram.png" alt="Responsive image">
+                        </div>
+                        <p class="caption"> 
+                            Figure 1: Block diagram of a TDR system.
+                        </p>
+
+                        <p>
+                            The bottleneck in this task was on the fast-sampling ADC part. Electric signals in conductors travel at a speed 
+                            close to that of light in vacuum
+                            (<math display='inline'>
+                                <mrow>
+                                 <mi>3</mi><mo>&#x00D7;</mo><msup>
+                                  <mrow>
+                                   <mi>1</mi><mi>0</mi></mrow>
+                                  <mi>8</mi>
+                                 </msup>
+                                </mrow>
+                            </math>                               
+                            <math display='inline'>
+                                <mrow>
+                                 <mi>m</mi><mo>&#x00B7;</mo><msup>
+                                  <mi>s</mi>
+                                  <mrow>
+                                   <mo>&#x2212;</mo><mn>1</mn></mrow>
+                                 </msup>
+                                </mrow>
+                            </math>). 
+                            The data acquisition rate needs to be of order Mega Samples Per 
+                            Second (MSPS) and above. Surprisingly, I came across a project on ultrafast data acquisition using the Raspberry 
+                            Pi. The project employed Secondary Memory Interface (SMI) and Direct Memory Access (DMA) 
+                            <a href="#ref1">[1]</a>.
+                        </p>
+
+                        <p>
+                            SMI is a parallel interface found in all Raspberry Pi versions. It enables one to interface the Raspberry Pi 
+                            with peripheral devices using a parallel interface. This way, it is possible to grab all data bits from a 
+                            peripheral device using a single clock cycle. SMI (parallel) interface is faster compared to serial interfaces 
+                            such as Serial Peripheral Interface (SPI), serial Universal Asynchronous Receiver-Transmitter (UART) and 
+                            Inter-Integrated Circuit (I2C) <a href="#ref2">[2]</a>. Serial interfaces require multiple clock cycles to transfer one data sample. 
+                            The AD9226 ADC was used for the data acquisition. The AD9226 is a cheap ultrafast
+                            (<math display='inline'>
+                                <mrow>
+                                  <mi>6</mi><mi>5</mi>
+                                </mrow>
+                            </math>                               
+                            <math display='inline'>
+                                <mrow>
+                                  <mi>M</mi><mi>S</mi><mi>P</mi><mi>S</mi>
+                                </mrow>
+                            </math>)
+                            
+                            ADC that has a parallel interface and, hence, can be interfaced with the Raspberry
+                            Pi using SMI <a href="#ref1">[1]</a>.
+                        </p>
+                        <p>
+                            To transfer the data to memory, DMA was used. DMA is a method of moving data around a computer at high speeds. 
+                            DMA operates independent of the Central Processing Unit (CPU). The CPU is prone to jitter due to interruption 
+                            by high priority tasks. However, our data acquisition requirement is time sensitive and so DMA was the best way 
+                            of moving data from the ADC to the memory. The CPU is only used to initialise the data transfer and then the DMA 
+                            takes over the process. Once the process is over, the DMA reports to the CPU that the process is over 
+                            <a href="#ref3">[3]</a>. When transferring data from or to a flash drive for example, your computer uses DMA too.
+                        </p>
+
+                        <p>
+                            Using the AD9226 and a Raspberry Pi 4, I was able to achieve a sampling rate of 
+                            <math display='inline'>
+                                <mrow>
+                                  <mi>3</mi><mi>1</mi>
+                                </mrow>
+                            </math>                               
+                            <math display='inline'>
+                                <mrow>
+                                  <mi>M</mi><mi>S</mi><mi>P</mi><mi>S</mi>
+                                </mrow>
+                            </math>
+                            . This was sufficient data acquisition rate for a TDR. A 74AC14 Schmitt trigger is used to generate fast-rising 
+                            pulses at 
+                            <math display='inline'>
+                                <mrow>
+                                  <mi>8</mi><mi>.</mi><mi>3</mi>
+                                </mrow>
+                            </math>                               
+                            <math display='inline'>
+                                <mrow>
+                                  <mi>k</mi><mi>H</mi><mi>z</mi>
+                                </mrow>
+                            </math>.
+                            The Pulses are applied to a cable and sampled at the input port by the ADC. The Raspberry Pi has been loaded with 
+                            programs to drive the ADC and to transfer the ADC output to memory for saving. The saved signal samples are then 
+                            processed to detect faults in electric cables. Figure 2 shows the Raspberry Pi TDR.
+                        </p>
+
+                        <div class="blog-image">
+                            <img src="img/adc-tdr-system.png" alt="Responsive image">
+                        </div>
+                        <p class="caption"> 
+                            Figure 2: Raspberry Pi based TDR.
+                        </p>
+
+
+                        <div class="blog-image">
+                            <img src="img/pulses.png" alt="Responsive image">
+                        </div>
+                        <p class="caption"> 
+                            Figure 3: Pulses generated and sampled by the TDR system.
+                        </p>
+
+                        <p>
+                            A section of the Dedan Kimathi University of Technology Conservancy electric fence that is 
+                            106 m 
+                            was used to simulate open circuit and short circuit faults. The TDR system was used to apply rectangular 
+                            pulses to the fence during the simulations, sample the signals at the input and then save them. 435 files 
+                            were collected from the exercise. The saved signals have been used to develop a time domain reflectometry 
+                            algorithm for fault detection and localisation. The algorithm is able to detect a fault with a precision of 
+                            <math display='inline'><mrow><mo>&#x00B1;</mo><mn>1.18</mn></mrow></math>
+                            <math display='inline'><mi>m</mi></math>
+                        </p>
+
+                        <div class="blog-image">
+                            <img src="img/tdr-system-adapter-box.jpg" alt="Responsive image">
+                        </div>
+                        <p class="caption"> 
+                            Figure 4: TDR system during a data collection exercise.
+                        </p>
+
+                        <div class="blog-image">
+                            <img src="img/tdr-system-connected-to-fence.jpg" alt="Responsive image">
+                        </div>
+                        <b></b>
+                        <p class="caption"> 
+                            Figure 5: TDR system connected to the fence.
+                        </p>
+
+                        <div class="blog-image">
+                            <img src="img/open-cct.jpg" alt="Responsive image">
+                        </div>
+                        <p class="caption"> 
+                            Figure 6: Signal sampled from an open-circuited fence.
+                        </p>
+
+                        <div class="blog-image">
+                            <img src="img/short-cct.jpg" alt="Responsive image">
+                        </div>
+                        <p class="caption"> 
+                            Figure 7: Signal sampled from a short-circuited fence.
+                        </p>
+
+                        <h6>References</h6>
+                    
+                        <p>
+                            <a id="ref1"><strong>[1]</strong></a> J. P. Bentham, "Raspberry Pi Secondary Memory Interface (SMI)",
+                            Lean2, 16 July 2020. [Online]. Available: https://iosoft.blog/2020/07/16/raspberry-pi-smi/. 
+                            [Accessed 1 December 2022].
+                        </p>   
+
+                        <p>
+                            <a id="ref2"><strong>[2]</strong></a> J. P. Bentham, "Fast data capture with the Raspberry Pi",
+                            Lean2, 11 June 2020. [Online]. Available: https://iosoft.blog/2020/06/11/fast-data-capture-raspberry-pi/. 
+                            [Accessed 1 December 2022].
+                        </p>
+
+                        <p>
+                            <a id="ref3"><strong>[3]</strong></a> J. P. Bentham, "Raspberry Pi DMA programming in C",
+                            Lean2, 25 May 2020. [Online]. Available: https://iosoft.blog/2020/05/25/raspberry-pi-dma-programming/. 
+                            [Accessed 1 December 2022].
+                        </p>
+                    </section>
+        
+                </article>
+        
+                <div class="gh-read-next gh-canvas">
+                    <section class="gh-pagehead">
+                        <h4 class="gh-pagehead-title">Related articles</h4>
+                    </section>
+        
+                    <div class="gh-topic gh-topic-grid">
+                        <div class="gh-topic-content">                            
+        
+                            <article class="gh-card post">
+                                <a class="gh-card-link" href="https://kiariegabriel.github.io/posts/blogs/electric-signals-reflection.html">
+                                    <figure class="gh-card-image">
+                                        <img
+                                            sizes="(max-width: 1200px) 100vw, 1200px"
+                                            src="img/reflection-coefficient.png"
+                                            alt="Responsive Image"
+                                        >
+                                    </figure>
+            
+                                    <div class="gh-card-wrapper">
+                                        <header class="gh-card-header">
+                                            <h3 class="gh-card-title">
+                                                Reflection of Electric Signals in Conductors
+                                            </h3>
+                                        </header>
+                            
+                                        <div class="gh-card-excerpt">
+                                            Reflection of electric signals demystified.
+                                        </div>
+                            
+                                        <footer class="gh-card-footer">
+                                            <span class="gh-card-author">Gabriel Kiarie</span>
+                                            <time class="gh-card-date" datetime="2022-03-08">Dec 10, 2022</time>
+                                        </footer>
+                                    </div>
+                                </a>
+                            </article>
+
+                            <article class="gh-card post">
+                                <a class="gh-card-link" href="tdr.html">
+                                    <figure class="gh-card-image">
+                                        <img
+                                            sizes="(max-width: 1200px) 100vw, 1200px"
+                                            src="img/tdr-system-block-diagram.png"
+                                            alt="DSAIL Bioacoustics System"
+                                        >
+                                    </figure>
+            
+                                    <div class="gh-card-wrapper">
+                                        <header class="gh-card-header">
+                                            <h3 class="gh-card-title">
+                                                Time Domain Reflectometry (TDR)
+                                            </h3>
+                                        </header>
+                            
+                                        <div class="gh-card-excerpt">
+                                            How TDR works.
+                                        </div>
+                            
+                                        <footer class="gh-card-footer">
+                                            <span class="gh-card-author">Gabriel Kiarie</span>
+                                            <time class="gh-card-date" datetime="2022-03-08">Dec 15, 2020</time>
+                                        </footer>
+                                    </div>
+                                </a>
+                            </article>
+
+                        </div>
+                    </div>
+                    <footer class="gh-topic-footer">
+                        <a class="gh-topic-link" href="../blogs.html">Show more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    </footer>
+                </div>
+                
+                    
+            </main>
+
+            <footer class="gh-foot gh-outer">
+                <div class="gh-foot-inner gh-inner">
+                    <div class="footer-section about">
+                        <h2 class="logo-text">Let's Connect</h2>
+                        <div class="contact">
+                            <span><i class="fas fa-phone">&nbsp; +254701978882</i></span>
+                            <span><i class="fas fa-envelope">&nbsp; gabrielkiarie1@gmail.com</i></span>
+                        </div>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/gabriel-kiarie-156351131/"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/kiariegabriel/"><i class="fab fa-github"></i></a>
+                        </div>
+
+                        <div class="gh-copyright">
+                             <a href="https://kiariegabriel.github.io/"  rel="noopener">Gabriel Kiarie © 2022.</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+
+        <script src="../../assets/built/main.min.js"></script>
+
+    </body>
+
+</html>
