@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gabriel Kiarie</title>
+        <link rel="stylesheet" href="../../assets/built/screen.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" href="../../img/favicon.png"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>        
+
+    <body class="home-template is-head-b--a_n has-serif-body">
+        <div class="gh-site">
+            <header id="gh-head" class="gh-head gh-outer">
+                <div class="gh-head-inner gh-inner">
+                    <a class="gh-head-description" href="../blogs.html">Technical Blogs</a>
+
+                    <div class="gh-head-brand">
+                        <div class="gh-head-brand-wrapper">
+                            <a class="gh-head-logo" href="https://kiariegabriel.github.io/">
+                                /ʌɪ/
+                            </a>
+                        </div>
+                        <button class="gh-burger"></button>
+                    </div>
+
+                    <nav class="gh-head-menu">
+                        <ul class="nav">
+                            <li><a href="https://kiariegabriel.github.io/">Home</a></li>
+                            <li class="dropdown">
+                                <button class="dropbtn">Posts
+                                  <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="dropdown-content">
+                                  <a href="../nature.html">Nature</a>
+                                  <a href="../blogs.html">Technical Blogs</a>
+                                  <a href="../remarkable-men.html">Remarkable Men</a>
+                                </div>
+                            </li>
+                            <li><a href="../publications.html">Publications</a></li>
+                        </ul>
+
+                    </nav>
+                </div>
+            </header>
+
+
+            <main class="gh-main">
+                <article class="gh-article post tag-bayes">
+        
+                    <header class="gh-article-header gh-canvas">
+                        <p class="gh-article-tag">
+				    <b>Keywords:</b> Time domain reflectometry, Reflection, analogue to digital converter
+				</p>
+        
+                        <h1 class="gh-article-title">
+                            Time Domain Reflectometry (TDR)
+                        </h1>
+        
+                        <aside class="gh-article-sidebar">
+        
+                            <div class="gh-author-image-list">
+                                <a class="gh-author-image" href="#">
+                                <img src="img/passport.jpg" alt="auth.">
+                                </a>
+                            </div>
+        
+                            <div class="gh-author-name-list">
+                                <h4 class="gh-author-name">
+                                    <a href="#">Gabriel Kiarie</a>
+                                </h4>                                    
+                            </div>
+        
+                            <div class="gh-article-meta">
+                                <div class="gh-article-meta-inner">
+                                    <time class="gh-article-date" datetime="2022-01-27">Dec 10, 2022</time>
+                                    <span class="gh-article-meta-sep"></span>
+                                    <span class="gh-article-length">7 min</span>
+                                </div>
+                            </div>
+                        </aside>
+
+                        <p class="gh-article-excerpt">
+                            How TDR works.
+                        </p>
+                           
+                    </header>
+        
+                    <section class="gh-content gh-canvas">
+
+                        <p>
+                            TDR is a method of fault detection and localisation in electric cables. TDR involves sending a fast-rising 
+                            pulse down a cable and sampling it at the input. The sampled signal is then analysed to look for reflected 
+                            signals. From the sampled signal, we can detect the presence of a fault and determine the type of the fault 
+                            and its point of occurrence. TDR is based on the principle that impedance discontinuities in cables result 
+                            in reflection of an incident signal. To understand more about reflection of electric signals, I suggest you 
+                            look at this post: 
+                            <a 
+                                href="https://kiariegabriel.github.io/posts/blogs/electric-signals-reflection.html" target="_blank">
+                                Reflection of Electric Signals in Conductors
+                            </a>. 
+                            Faults introduce impedance discontinuities in cables and, therefore, using TDR, we can detect faults in cables. 
+                            TDR also finds use in geological studies such as testing soil moisture.
+                        </p>
+
+                        <h2>Structure of a TDR system</h2>
+
+                        <p>
+                            The main parts of a TDR system are a fast-rising pulse generator, a fast-sampling Analogue to Digital Converter
+                             (ADC), a processing unit and the Cable Under Test (CUT). Figure 1 shows the architecture of a TDR system.
+                        </p>
+
+                        <div class="blog-image">
+                            <img src="img/tdr-system-block-diagram.png" alt="Responsive image">
+                        </div>
+                        <p class="caption"> 
+                            Figure 1: Block diagram of a TDR system.
+                        </p>
+
+                        <h3>i. Fast-rising pulse generator</h3>
+
+                        <p>
+                            It is used to generate a fast-rising excitation signal. Most TDR systems use rectangular 
+                            signals as the excitation signal. The signal needs to be fast rising in order to increase the 
+                            precision of the TDR system.
+                        </p>
+
+                        <h3>iI. Fast-sampling Analogue to Digital Converter (ADC)</h3>
+
+                        <p>
+                            The ADC is used to digitise the signal at the input port of the CUT. 
+                            Electric signals travel at the speed close to that of light  
+                            <math display='inline'>
+                                <mrow>
+                                 <mn>3</mn><mo>&#x00D7;</mo><msup>
+                                  <mrow>
+                                   <mn>10</mn></mrow>
+                                  <mn>8</mn>
+                                 </msup>
+                                </mrow>
+                            </math>
+
+                            <math display='inline'>
+                                <mrow>
+                                 <mi>m</mi><mo>&#x00B7;</mo><msup>
+                                  <mi>s</mi>
+                                  <mrow>
+                                   <mo>&#x2212;</mo><mn>1</mn></mrow>
+                                 </msup>
+                                </mrow>
+                            </math>.
+                               
+                            This means that an ADC with a very high sampling rate is required. The output of the ADC is fed 
+                            to a processing unit for processing.
+                        </p>
+
+                        <h3>iii. Processing unit</h3>
+
+                        <p>
+                            The processing unit is used to process the sampled signal to detect faults and compute the 
+                            distance to the faults.
+                        </p>
+
+                        <h3>iv. Cable Under Test (CUT)</h3>
+
+                        <p>
+                            This is the electric cable being analysed to check for faults.
+                        </p>
+
+                        <h2>Principle of operation</h2>
+
+                        <p>
+                            An electric signal travelling down an electric cable gets reflected wholly or partially when it 
+                            encounters impedance discontinuities in the cable. The reflected signal, 
+                            <math display='inline'><mrow><msub><mi>V</mi><mi>r</mi></msub></mrow></math>, 
+                            is given by:
+                        </p>
+
+                        <math display='block'>
+                            <mrow>
+                             <msub>
+                              <mi>V</mi>
+                              <mi>r</mi>
+                             </msub>
+                             <mo>=</mo><mi>&#x0393;</mi><mo>&#x00D7;</mo><msub>
+                              <mi>V</mi>
+                              <mi>i</mi>
+                             </msub>
+                            </mrow>
+                        </math>
+                           
+
+                        <math display='block'>
+                            <mrow>
+                                <mo>&#x00A0;</mo><mi>&#x0393;</mi>
+                                <mo>=</mo>
+                                <mfrac>
+                                    <mrow>
+                                        <msub>
+                                            <mi>Z</mi><mi>l</mi>
+                                        </msub>
+                                        <mo>&#x2212;</mo>
+                                        <msub>
+                                            <mi>Z</mi><mi>c</mi>
+                                        </msub>
+                                    </mrow>
+                                    <mrow>
+                                        <msub>
+                                            <mi>Z</mi><mi>l</mi>
+                                        </msub>
+                                        <mo>+</mo>
+                                        <msub>
+                                            <mi>Z</mi><mi>c</mi>
+                                        </msub>
+                                    </mrow>
+                                </mfrac>
+                            </mrow>
+                        </math>
+
+                        <P>
+                            Where: <math display='inline'><mi>&#x0393;</mi></math> is the reflection coefficient, 
+                            <math display='inline'><mrow><msub><mi>Z</mi><mi>c</mi></msub></mrow></math>
+                            is the characteristic impedance of the cable and 
+                            <math display='inline'><mrow><msub><mi>Z</mi><mi>l</mi></msub></mrow></math> 
+                            is the impedance of the load (fault)
+                        </P>
+
+                        <p>
+                            The reflection coefficient is dependent on the impedance of the fault. Faults with impedances 
+                            higher than the characteristic impedance of the cable have a positive reflection coefficient 
+                            and, hence, result in reflected signals that are in phase with the incident signal. Conversely, 
+                            faults with impedances lower than the characteristic impedance of the cable have a negative reflection 
+                            coefficient and they cause reflected signals that are out of phase with the incident signal. The magnitude 
+                            of the reflection coefficient is directly proportional to the amplitude of the impedance of the fault. Open 
+                            circuit and short circuit have the optimum reflection coefficients of 
+                            <math display='inline'><mrow><mi>1</mi></mrow></math> 
+                            and 
+                            <math display='inline'><mrow><mi>-</mi><mi>1</mi></mrow></math> 
+                            respectively. Therefore, from 
+                            the magnitude and the phase of the reflected signal, we can tell the type of impedance in a cable.
+                        </p>
+               
+
+                        <div class="blog-image">
+                            <img src="img/open-and-short-circuits-reflections.png" alt="Responsive image">
+                        </div>
+                        <p class="caption"> 
+                            Figure 2: Reflection due to: (a) A short circuit and (b) an open circuit.
+                        </p>
+
+                        <p>
+                            To determine the point of occurrence of the fault, the time delay, 
+                            <math display='inline'><mrow><mo>&#x25B3;</mo><mi>t</mi></mrow></math>,
+                            of the reflected signal is used. 
+                            Electricity travels in an electric cable at the speed close to the speed of light in vacuum. The ratio 
+                            of the speed of electricity in a conductor to that of light in a vacuum is called the velocity factor, 
+                            <math display='inline'><mrow><mi>V</mi><mi>F</mi></mrow></math>.
+                        </p>
+
+                        $$VF = {v \over c}$$
+
+                        <p>
+                            Where 
+                            <math display='inline'><mrow><mi>v</mi></mrow></math> 
+                            is the velocity of electricity in a cable and 
+                            <math display='inline'><mrow><mi>c</mi></mrow></math> 
+                            is the speed of light in vacuum.
+                        </p>
+
+                        <p>
+                            Different cables have different velocity factors. The speed of an electric signal is computed from the 
+                            velocity factor. Using the known speed of the signal, and the time delay of the reflected signal, the 
+                            distance to the point of the fault, 
+                            <math display='inline'><mrow><msub><mi>d</mi><mi>f</mi></msub></mrow></math>,     
+                            is given by:
+                        </p>
+
+                        <math display='block'>
+                            <mrow>
+                             <msub>
+                              <mi>d</mi>
+                              <mi>f</mi>
+                             </msub>
+                             <mo>=</mo><mfrac>
+                              <mrow>
+                               <mo>&#x25B3;</mo><mi>t</mi><mo>&#x00D7;</mo><mi>v</mi></mrow>
+                              <mn>2</mn>
+                             </mfrac>
+                            </mrow>
+                        </math>
+
+                        <p>
+                            Therefore, by sending a fast-rising pulse down a cable, sampling it at the input port and analysing it, 
+                            we can detect faults in cables, determine the type of fault and also compute the distance from the input 
+                            to the point of the fault.
+                        </p>
+                    </section>
+        
+                </article>
+        
+                <div class="gh-read-next gh-canvas">
+                    <section class="gh-pagehead">
+                        <h4 class="gh-pagehead-title">Related articles</h4>
+                    </section>
+        
+                    <div class="gh-topic gh-topic-grid">
+                        <div class="gh-topic-content">                            
+        
+                            <article class="gh-card post">
+                                <a class="gh-card-link" href="https://kiariegabriel.github.io/posts/blogs/electric-signals-reflection.html">
+                                    <figure class="gh-card-image">
+                                        <img
+                                            sizes="(max-width: 1200px) 100vw, 1200px"
+                                            src="img/reflection-coefficient.png"
+                                            alt="Responsive Image"
+                                        >
+                                    </figure>
+            
+                                    <div class="gh-card-wrapper">
+                                        <header class="gh-card-header">
+                                            <h3 class="gh-card-title">
+                                                Reflection of Electric Signals in Conductors
+                                            </h3>
+                                        </header>
+                            
+                                        <div class="gh-card-excerpt">
+                                            Reflection of electric signals demystified.
+                                        </div>
+                            
+                                        <footer class="gh-card-footer">
+                                            <span class="gh-card-author">Gabriel Kiarie</span>
+                                            <time class="gh-card-date" datetime="2022-03-08">Dec 10, 2022</time>
+                                        </footer>
+                                    </div>
+                                </a>
+                            </article>
+
+                            <article class="gh-card post">
+                                <a class="gh-card-link" href="#">
+                                    <figure class="gh-card-image">
+                                        <img
+                                            sizes="(max-width: 1200px) 100vw, 1200px"
+                                            src="img/tdr-system-block-diagram.png"
+                                            alt="DSAIL Bioacoustics System"
+                                        >
+                                    </figure>
+            
+                                    <div class="gh-card-wrapper">
+                                        <header class="gh-card-header">
+                                            <h3 class="gh-card-title">
+                                                A Raspberry Pi Based Time Domain Reflectometer (TDR) [Upcoming]
+                                            </h3>
+                                        </header>
+                            
+                                        <!-- <div class="gh-card-excerpt">
+                                            A Raspberry Pi based acoustic sensor.
+                                        </div> -->
+                            
+                                        <footer class="gh-card-footer">
+                                            <span class="gh-card-author">Gabriel Kiarie</span>
+                                            <!-- <time class="gh-card-date" datetime="2022-03-08">Jun 28, 2021</time> -->
+                                        </footer>
+                                    </div>
+                                </a>
+                            </article>
+
+                        </div>
+                    </div>
+                    <footer class="gh-topic-footer">
+                        <a class="gh-topic-link" href="../blogs.html">Show more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    </footer>
+                </div>
+                
+                    
+            </main>
+
+            <footer class="gh-foot gh-outer">
+                <div class="gh-foot-inner gh-inner">
+                    <div class="footer-section about">
+                        <h2 class="logo-text">Let's Connect</h2>
+                        <div class="contact">
+                            <span><i class="fas fa-phone">&nbsp; +254701978882</i></span>
+                            <span><i class="fas fa-envelope">&nbsp; gabrielkiarie1@gmail.com</i></span>
+                        </div>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/gabriel-kiarie-156351131/"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/kiariegabriel/"><i class="fab fa-github"></i></a>
+                        </div>
+
+                        <div class="gh-copyright">
+                             <a href="https://kiariegabriel.github.io/"  rel="noopener">Gabriel Kiarie © 2022.</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+
+        <script src="../../assets/built/main.min.js"></script>
+
+    </body>
+
+</html>
