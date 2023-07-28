@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gabriel Kiarie</title>
+        <link rel="stylesheet" href="../../assets/built/screen.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="shortcut icon" href="../../img/favicon.png"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+	
+	<!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-34WJ5TD25F"></script>
+    <script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-34WJ5TD25F');
+    </script>
+
+    <body class="home-template is-head-b--a_n has-serif-body">
+        <div class="gh-site">
+            <header id="gh-head" class="gh-head gh-outer">
+                <div class="gh-head-inner gh-inner">
+                    <a class="gh-head-description" href="../blogs.html">Technical Blogs</a>
+
+                    <div class="gh-head-brand">
+                        <div class="gh-head-brand-wrapper">
+                            <a class="gh-head-logo" href="https://kiariegabriel.github.io/">
+                                Gabriel Kiarie
+                            </a>
+                        </div>
+                        <button class="gh-burger"></button>
+                    </div>
+
+                    <nav class="gh-head-menu">
+                        <ul class="nav">
+                            <li><a href="https://kiariegabriel.github.io/">Home</a></li>
+                            <li class="dropdown">
+                                <button class="dropbtn">Posts
+                                  <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="dropdown-content">
+                                  <a href="../nature.html">Nature</a>
+                                  <a href="../blogs.html">Technical Blogs</a>
+                                  <a href="../remarkable-men.html">Remarkable Men</a>
+                                </div>
+                            </li>
+                            <li><a href="../publications.html">Publications</a></li>
+                        </ul>
+
+                    </nav>
+                </div>
+            </header>
+
+
+            <main class="gh-main">
+                <article class="gh-article post tag-bayes">
+        
+                    <header class="gh-article-header gh-canvas">
+                        <p class="gh-article-tag">
+				    <b>Keywords:</b> Electric fences, Faults, Raspberry Pi TDR, Data collection
+				</p>
+        
+                        <h1 class="gh-article-title">
+                            Data Collection at Ol Pejeta Conservancy for the Raspberry Pi TDR Project
+                        </h1>
+        
+                        <aside class="gh-article-sidebar">
+        
+                            <div class="gh-author-image-list">
+                                <a class="gh-author-image" href="#">
+                                <img src="img/passport.jpg" alt="auth.">
+                                </a>
+                            </div>
+        
+                            <div class="gh-author-name-list">
+                                <h4 class="gh-author-name">
+                                    <a href="#">Gabriel Kiarie</a>
+                                </h4>                                    
+                            </div>
+        
+                            <div class="gh-article-meta">
+                                <div class="gh-article-meta-inner">
+                                    <time class="gh-article-date" datetime="2022-01-27">Jul 28, 2023</time>
+                                    <span class="gh-article-meta-sep"></span>
+                                    <span class="gh-article-length">7 min</span>
+                                </div>
+                            </div>
+                        </aside>
+
+                        <p class="gh-article-excerpt">
+                            A visit to Ol Pejeta for data collection.
+                        </p>
+                           
+                    </header>
+        
+                    <section class="gh-content gh-canvas">
+                        <p>
+                            Electric fences are used to create Protected Areas (PAs) to help preserve biodiversity, provide habitat to wildlife, 
+                            and reduce Human Wildlife Conflicts (HWCs). Electric fences are prone to faults that affect their operation. The most 
+                            common causes of faults in electric fences include broken wires, overgrown vegetation touching the fence, poor grounding, 
+                            bad connection, branches falling on the fence, and broken insulators. The faults need to be detected and repaired for the 
+                            effective performance of the fences. The most common method of detecting faults in an electric fence involves conducting 
+                            routine measurement of the fence voltage. If the voltage falls below a given value, the fence is said to be faulty. To 
+                            locate the fault, an authorized person is required to walk along the fence measuring the voltage of the fence. The voltage 
+                            drops continually up to the faulty point and then remains constant or drops to zero past the fault. This method of 
+                            detecting and locating faults is inefficient, time-consuming, and labourious since the fences are exceptionally long.  
+                        </p>
+
+                        <p>
+                            At the Centre for Data Science and Artificial Intelligence (DSAIL), we are developing a Raspberry Pi based Time Domain 
+                            Reflectometer (TDR) to detect and locate faults in electric fences. The system works using the principle of time domain 
+                            reflectometry. Read this 
+                            <a href="https://kiariegabriel.github.io/posts/blogs/raspberrypi-tdr.html" target="_blank">blog</a> 
+                            to learn more about the TDR. The TDR has a time domain reflectometry algorithm that processes 
+                            sampled signals to detect and locate faults in electric fences. The algorithm was developed using data collected from 
+                            experiments conducted using two 15 m copper cables and the Raspberry Pi TDR. Open circuit and short circuit faults are common 
+                            in electric fences. A short circuit fault occurs when a live wire comes into contact with a neutral wire. An open circuit fault 
+                            in electric fences is caused by the breakage of wires due to loose connections, vandalism, or damage caused by animals. Breakage 
+                            of electric fence wires will most likely eventually result in a short circuit fault. Open circuit and short circuit faults were 
+                            simulated on one end of the copper cables and a step signal was applied to the other end. Signal samples were taken at the input 
+                            using the TDR and saved on the storage of the Raspberry Pi.
+                        </p>
+
+                        <div class="blog-image">
+                            <img src="img/adc-tdr-system.png" alt="Responsive image">
+                        </div>
+                        <p class="caption"> 
+                            Figure 1: The Raspberry Pi based TDR.
+                        </p>
+
+                        <div class="blog-image">
+                            <img src="img/tdr-test-setup.jpg" alt="Responsive image">
+                        </div>
+                        <p class="caption"> 
+                            Figure 2: Setup to simulate open circuit and short circuit faults using two 15 m copper 
+                            cables and the Raspberry Pi TDR.
+                        </p>
+
+                        <p>
+                            The time domain reflectometry algorithm is based on change point detection using the method of discrete gradient. The performance of 
+                            the time domain reflectometry algorithm was evaluated using electric fences. A 108 m long section of the electric fence at the Dedan 
+                            Kimathi University of Technology Wildlife Conservancy (DeKUTWC) and a 280 m long section of an electric fence at Ol Pejeta Conservancy 
+                            were used. Two strands of the electric fence sections were used to simulate open circuit and short circuit faults and data was collected 
+                            from these experiments. The time domain reflectometry algorithm was able to detect and distinguish between the open circuit and short circuit 
+                            faults and predict the distance to these faults within ±1.52 m of the actual distance. The Raspberry Pi TDR needed to be evaluated using a 
+                            longer fence to ascertain its applicability in monitoring long fences. It is for this reason that we decided to visit Ol Pejeta Conservancy 
+                            and conduct experiments using a longer electric fence. Our goal was to simulate faults with a 1 km long fence and collect data.
+
+                        </p>
+
+                        <p>
+                            On 26<sup>th</sup> April 2023, we started the trip to Ol Pejeta Conservancy from Dedan Kimathi University of Technology (DeKUT) at around 8:30 am. The 
+                            team comprised Mr Mathenge (a technologist at DeKUT), Dishan Otieno (an undergraduate research assistant at DSAIL), and I (Gabriel Kiarie, a 
+                            research intern at DSAIL). We arrived at Ol Pejeta at around 10:00 am and headed for the Conservation Tech Lab to meet Mr Kennedy and brief him 
+                            on our plans. We left the lab for the section of the fence that we were to use for the data collection exercise. We were joined by a ranger and 
+                            a fence man on the way.
+                        </p>
+
+                        <p>
+                            When we arrived at the fence, we began by inspecting it to assess its suitability for use to conduct the experiments. The fence was suitable and the 
+                            fence man disconnected the energiser from it to allow us to conduct the experiments. The Raspberry Pi TDR was placed in an adapter box, connected to 
+                            the top two strands of the electric fence, and powered ON.
+                        </p>
+
+                        <div class="blog-image">
+                            <div class="column">
+                                <img src="img/tdr-olpejeta-action-shot.jpg" alt="Responsive image">
+                            </div>
+                            <div class="column">
+                                <img src="img/tdr-olpejeta-connection.jpg" alt="Responsive image">
+                            </div>
+                        </div>
+
+                        <p class="caption">
+                            Figure 3: Connecting the Raspberry Pi TDR to the electric fence (left); and
+                            the Raspberry Pi TDR connected to the electric fence (right).
+                        </p>
+
+                        <p>
+                            Open circuit and short circuit faults were simulated at intervals along the fence. Open circuits were created by disconnecting the junctions created 
+                            at two of the fence's segments. The end of the fence's wires was also treated as an open circuit.  Short circuits were created by connecting the two 
+                            electric fence strands using a conductor. The first short circuit was created 12 m from the start of the fence. The other short circuits were created 
+                            at 30 m intervals from the 12 m mark except the last one which was 10.7 m apart from the second last short circuit. Figure 3 shows how a short circuit 
+                            was created. 
+                        </p>
+
+                        <div class="blog-image">
+                            <img src="img/fence-short-circuit.jpg" alt="Responsive image">
+                        </div>
+                        <p class="caption"> 
+                            Figure 4: A conductor connected to two electric fence 
+                            strands to create a short circuit.
+                        </p>
+
+                        <p>
+                            3 open and 33 short circuit instances were created. For each instance, 20 files of sampled signals were collected and saved. Each file contains about 
+                            0.3 ms long sampled signal. In total, 720 files were collected. The files will be analysed and the results used to assess the performance of the 
+                            Raspberry Pi TDR. The section of the fence used was about 952 m long.
+                        </p>
+
+                        <p>
+                            The data collection exercise was successful despite us racing against time and worrying about the impending rains. Being in nature, we also got to enjoy 
+                            what it had to offer. I, in particular, was fascinated by the sight of a dung beetle rolling what seemed to be a perfectly moulded ball. For a moment I 
+                            thought we do not give enough credit to the intelligence of some of the animals. We also got a chance to see an elephant from a very close distance.
+                        </p>
+
+                        <div class="blog-image">
+                            <div class="column">
+                                <img src="img/dung-beetle-mould.jpg" alt="Responsive image">
+                            </div>
+                            <div class="column">
+                                <img src="img/elephant-closeup.jpg" alt="Responsive image">
+                            </div>
+                        </div>
+
+                        <p class="caption">
+                            Figure 5: A dung beetle rolling a ball (left); and
+                            a close up snapshot of an elephant (right).
+                        </p>
+
+                    </section>
+        
+                </article>
+        
+                <div class="gh-read-next gh-canvas">
+                    <section class="gh-pagehead">
+                        <h4 class="gh-pagehead-title">Related articles</h4>
+                    </section>
+        
+                    <div class="gh-topic gh-topic-grid">
+                        <div class="gh-topic-content">                            
+        
+                            <article class="gh-card post">
+                                <a class="gh-card-link" href="tdr.html">
+                                    <figure class="gh-card-image">
+                                        <img
+                                            sizes="(max-width: 1200px) 100vw, 1200px"
+                                            src="img/tdr-system-block-diagram.png"
+                                            alt="DSAIL Bioacoustics System"
+                                        >
+                                    </figure>
+            
+                                    <div class="gh-card-wrapper">
+                                        <header class="gh-card-header">
+                                            <h3 class="gh-card-title">
+                                                Time Domain Reflectometry (TDR)
+                                            </h3>
+                                        </header>
+                            
+                                        <div class="gh-card-excerpt">
+                                            How TDR works.
+                                        </div>
+                            
+                                        <footer class="gh-card-footer">
+                                            <span class="gh-card-author">Gabriel Kiarie</span>
+                                            <time class="gh-card-date" datetime="2022-03-08">Dec 15, 2022</time>
+                                        </footer>
+                                    </div>
+                                </a>
+                            </article>
+
+                            <article class="gh-card post">
+                                <a class="gh-card-link" href="raspberrypi-tdr.html">
+                                    <figure class="gh-card-image">
+                                        <img
+                                            sizes="(max-width: 1200px) 100vw, 1200px"
+                                            src="img/adc-tdr-system.png"
+                                            alt="DSAIL Bioacoustics System"
+                                        >
+                                    </figure>
+            
+                                    <div class="gh-card-wrapper">
+                                        <header class="gh-card-header">
+                                            <h3 class="gh-card-title">
+                                                A Raspberry Pi Based Time Domain Reflectometer (TDR)
+                                            </h3>
+                                        </header>
+                            
+                                        <div class="gh-card-excerpt">
+                                            A Raspberry Pi based TDR system.
+                                        </div>
+                            
+                                        <footer class="gh-card-footer">
+                                            <span class="gh-card-author">Gabriel Kiarie</span>
+                                            <time class="gh-card-date" datetime="2022-03-08">Dec 15, 2022</time>
+                                        </footer>
+                                    </div>
+                                </a>
+                            </article>
+
+                        </div>
+                    </div>
+                    <footer class="gh-topic-footer">
+                        <a class="gh-topic-link" href="../blogs.html">Show more <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+                    </footer>
+                </div>
+                
+                    
+            </main>
+
+            <footer class="gh-foot gh-outer">
+                <div class="gh-foot-inner gh-inner">
+                    <div class="footer-section about">
+                        <h2 class="logo-text">Let's Connect</h2>
+                        <div class="contact">
+                            <span><i class="fas fa-phone">&nbsp; +254701978882</i></span>
+                            <span><i class="fas fa-envelope">&nbsp; gabrielkiarie1@gmail.com</i></span>
+                        </div>
+                        <div class="social">
+                            <a href="https://www.linkedin.com/in/gabriel-kiarie-156351131/"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/kiariegabriel/"><i class="fab fa-github"></i></a>
+                        </div>
+
+                        <div class="gh-copyright">
+                             <a href="https://kiariegabriel.github.io/"  rel="noopener">Gabriel Kiarie © 2022.</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+
+        <script src="../../assets/built/main.min.js"></script>
+
+    </body>
+
+</html>
